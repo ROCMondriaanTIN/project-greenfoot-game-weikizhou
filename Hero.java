@@ -10,6 +10,9 @@ public class Hero extends Mover {
     private final double gravity;
     private final double acc;
     private final double drag;
+    private int goudenMunt;
+    private int zilverenMunt;
+   
 
     public Hero() {
         super();
@@ -22,7 +25,8 @@ public class Hero extends Mover {
     @Override
     public void act() {
         handleInput();
-        
+        getGoudenMunt();
+        getZilverenMunt();
         velocityX *= drag;
         velocityY += acc;
         if (velocityY > gravity) {
@@ -37,7 +41,27 @@ public class Hero extends Mover {
             }
         }
     }
-
+    
+     public int getZilverenMunt()
+    {
+    if(isTouching(zilverenMunt.class))
+    {
+        removeTouching(zilverenMunt.class);
+        zilverenMunt++;    
+    }
+    return zilverenMunt;
+    }
+    
+    public int getGoudenMunt()
+    {
+    if(isTouching(goudenMunt.class))
+    {
+        removeTouching(goudenMunt.class);
+        goudenMunt++;    
+    }
+    return goudenMunt;
+    }
+    
     public void handleInput() {
         if (Greenfoot.isKeyDown("space")) {
             velocityY = -10;
