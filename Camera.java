@@ -31,7 +31,7 @@ public class Camera extends Actor {
     public Camera(TileEngine tileEngine) {
         this.width = TileEngine.SCREEN_WIDTH;
         this.height = TileEngine.SCREEN_HEIGHT;
-        this.setLocation(0, 0);
+        this.setLocation(0,0);
         this.maxX = TileEngine.MAP_WIDTH * TileEngine.TILE_WIDTH - this.width;
         this.maxY = TileEngine.MAP_HEIGHT * TileEngine.TILE_HEIGHT - this.height;
         this.tileEngine = tileEngine;

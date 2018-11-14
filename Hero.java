@@ -12,8 +12,8 @@ public class Hero extends Mover {
     private final double drag;
     private int goudenMunt;
     private int zilverenMunt;
-   
-
+	
+    
     public Hero() {
         super();
         gravity = 9.8;
@@ -42,7 +42,15 @@ public class Hero extends Mover {
         }
     }
     
-     public int getZilverenMunt()
+    //om te kijken wat de cordinatie is
+    public String inspectMove()
+    {
+        String inspectmove= "X:"+this.getX()+"Y:"+this.getY(); 
+        return inspectmove; 
+    }
+    
+    //hier zorg je ervoor dat het object weggaat als je het aanraakt
+    public int getZilverenMunt()
     {
     if(isTouching(zilverenMunt.class))
     {
@@ -52,21 +60,31 @@ public class Hero extends Mover {
     return zilverenMunt;
     }
     
+    //hier zorg je ervoor dat het object weggaat als je het aanraakt
     public int getGoudenMunt()
     {
     if(isTouching(goudenMunt.class))
     {
         removeTouching(goudenMunt.class);
-        goudenMunt++;    
+        goudenMunt+=2;    
     }
     return goudenMunt;
     }
     
+
+    public boolean opGrond()
+    {
+        Actor onder = getOneObjectAtOffset(0,getImage().getHeight()/2,Tile.class);
+        return onder != null;
+    }
+   
+   
     public void handleInput() {
-        if (Greenfoot.isKeyDown("space")) {
+        if (Greenfoot.isKeyDown("space")&& opGrond()==true)
+        {
             velocityY = -10;
         }
-
+     
         if (Greenfoot.isKeyDown("left")) {
             velocityX = -2;
         } else if (Greenfoot.isKeyDown("right")) {
