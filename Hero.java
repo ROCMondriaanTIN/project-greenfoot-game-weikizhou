@@ -10,16 +10,17 @@ public class Hero extends Mover {
     private final double gravity;
     private final double acc;
     private final double drag;
-    private int goudenMunt;
-    private int zilverenMunt;
-	
+    private int GoudenMunt;
+    private int ZilverenMunt;
+    public static int hero = 1;
+    
     
     public Hero() {
         super();
         gravity = 9.8;
         acc = 0.6;
         drag = 0.8;
-        setImage("p1.png");
+        setImage("p" + this.hero + "_front.png");
     }
 
     @Override
@@ -52,23 +53,23 @@ public class Hero extends Mover {
     //hier zorg je ervoor dat het object weggaat als je het aanraakt
     public int getZilverenMunt()
     {
-    if(isTouching(zilverenMunt.class))
+    if(isTouching(ZilverenMunt.class))
     {
-        removeTouching(zilverenMunt.class);
-        zilverenMunt++;    
+        removeTouching(ZilverenMunt.class);
+        ZilverenMunt++;    
     }
-    return zilverenMunt;
+    return ZilverenMunt;
     }
     
     //hier zorg je ervoor dat het object weggaat als je het aanraakt
     public int getGoudenMunt()
     {
-    if(isTouching(goudenMunt.class))
+    if(isTouching(GoudenMunt.class))
     {
-        removeTouching(goudenMunt.class);
-        goudenMunt+=2;    
+        removeTouching(GoudenMunt.class);
+        GoudenMunt+=2;    
     }
-    return goudenMunt;
+    return GoudenMunt;
     }
     
 
@@ -82,13 +83,13 @@ public class Hero extends Mover {
     public void handleInput() {
         if (Greenfoot.isKeyDown("space")&& opGrond()==true)
         {
-            velocityY = -10;
+            velocityY = -15;
         }
      
         if (Greenfoot.isKeyDown("left")) {
-            velocityX = -2;
+            velocityX = -4;
         } else if (Greenfoot.isKeyDown("right")) {
-            velocityX = 2;
+            velocityX = 4;
         }
     }
 

@@ -17,13 +17,21 @@ public class StartScherm extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1); 
+        this.setBackground("bg.png");
+        
+        Playbutton playbutton = new Playbutton();
+        addObject(playbutton,500,300);
+        
+        Player player1 = new Player(1);
+        addObject(player1,100,600);
+        
+        Player player2 = new Player(2);
+        addObject(player2,500,600);
+        
+        Player player3 = new Player(3);
+        addObject(player3,900,600);
     }
-    public void act()
-    {
-        if(Greenfoot.isKeyDown("enter"))
-        {
-        Greenfoot.setWorld(new Level1());
-        }
-    }
+   
+    
     
 }

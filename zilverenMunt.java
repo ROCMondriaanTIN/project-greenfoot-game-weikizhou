@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class zilverenMunt extends Mover
+public class ZilverenMunt extends Mover
 {
     /**
      * Act - do whatever the zilverenMunt wants to do. This method is called whenever
