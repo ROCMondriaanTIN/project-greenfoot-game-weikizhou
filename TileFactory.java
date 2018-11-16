@@ -92,7 +92,7 @@ public class TileFactory {
 		break;
 		case 19:
 		tile = new Tile("castleCenter.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-		 tile.isSolid = true;
+		
 		break;
 		case 20:
 		tile = new Tile("castleCenter_rounded.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
@@ -260,7 +260,7 @@ public class TileFactory {
 		break;
 		case 65:
 		tile = new Tile("grassCenter.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-		 tile.isSolid = true;
+
 		break;
 		case 66:
 		tile = new Tile("grassCenter_rounded.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
