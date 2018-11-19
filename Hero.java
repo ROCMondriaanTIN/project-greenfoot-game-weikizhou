@@ -1,4 +1,4 @@
-
+z
 import greenfoot.*;
 
 /**
@@ -13,6 +13,10 @@ public class Hero extends Mover {
     private int GoudenMunt;
     private int ZilverenMunt;
     public static int hero = 1;
+    public int GemBlue;
+    public int KeyYellow;
+    //public boolean KeyYellow = false;
+    
     
     
     public Hero() {
@@ -21,6 +25,7 @@ public class Hero extends Mover {
         acc = 0.6;
         drag = 0.8;
         setImage("p" + this.hero + "_front.png");
+        
     }
 
     @Override
@@ -28,6 +33,9 @@ public class Hero extends Mover {
         handleInput();
         getGoudenMunt();
         getZilverenMunt();
+        getGemBlue();
+        getKeyYellow();
+        
         velocityX *= drag;
         velocityY += acc;
         if (velocityY > gravity) {
@@ -71,15 +79,49 @@ public class Hero extends Mover {
     }
     return GoudenMunt;
     }
+    //hier zorg je ervoor dat het object weggaat als je het aanraakt
+    public int getGemBlue()
+    {
+        if(isTouching(GemBlue.class))
+    {
+    removeTouching(GemBlue.class);
+    //hier zorg je ervoor dat het object weggaat als je het aanraakt
+    }
+    return GemBlue;
+    }
+    //hier zorg je ervoor dat het object weggaat als je het aanraakt
+    public int getKeyYellow()
+    {
+    if(isTouching(KeyYellow.class))
+    {
+        removeTouching(KeyYellow.class)
+    }
+    return KeyYellow;
+    }
     
-
+    /*public void level1(){
+    for (Actor deur:getIntersectingObjects(DeurMid.class))
+    {
+        if(KeyYellow ==true){
+            if(DeurMid.class!=null)
+            {
+                Greenfoot.setWorld(new Level2());
+                String actieveWereld="Level2";
+                return;
+            }
+        }
+        break;
+    }
+    }*/
+    
     public boolean opGrond()
     {
         Actor onder = getOneObjectAtOffset(0,getImage().getHeight()/2,Tile.class);
         Tile tile = (Tile) onder;
         return tile != null && tile.isSolid ==true;
     }
-   
+    
+    
    
     public void handleInput() {
         if (Greenfoot.isKeyDown("space")&& opGrond()==true)
