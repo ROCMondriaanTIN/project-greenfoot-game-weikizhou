@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Level2 extends World
 {
-
+     public String actieveWereld="Level12";
     /**
      * Constructor for objects of class Level2.
      * 
