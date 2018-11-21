@@ -1,4 +1,4 @@
-z
+
 import greenfoot.*;
 
 /**
@@ -17,38 +17,23 @@ public class Hero extends Mover {
     public boolean YellowKey =false;
     private int GemBlue;
 
-    public static int hero = 1;
-    public int GemBlue;
-    public int KeyYellow;
-    //public boolean KeyYellow = false;
-    
-    
-
-    
     public Hero() {
         super();
         gravity = 9.8;
         acc = 0.6;
         drag = 0.8;
         setImage("p" + this.hero + "_front.png");
-        
     }
 
-   
     @Override
     public void act() {
         handleInput();
         getGoudenMunt();
         getZilverenMunt();
         getGemBlue();
-
         getYellowKey();
-        getGemBlue();
         DeurOpen();
 
-        getKeyYellow();
-
-        
         velocityX *= drag;
         velocityY += acc;
         if (velocityY > gravity) {
@@ -124,47 +109,9 @@ public class Hero extends Mover {
                 return;
             } 
         }
-    
     break;
     }
     }
-
-
-    //hier zorg je ervoor dat het object weggaat als je het aanraakt
-    public int getGemBlue()
-    {
-        if(isTouching(GemBlue.class))
-    {
-    removeTouching(GemBlue.class);
-    //hier zorg je ervoor dat het object weggaat als je het aanraakt
-    }
-    return GemBlue;
-    }
-    //hier zorg je ervoor dat het object weggaat als je het aanraakt
-    public int getKeyYellow()
-    {
-    if(isTouching(KeyYellow.class))
-    {
-        removeTouching(KeyYellow.class);
-    }
-    return KeyYellow;
-    }
-    
-    public void level1(){
-    for (Actor deur:getIntersectingObjects(DeurMid.class))
-    {
-        if(KeyYellow ==true){
-            if(DeurMid.class!=null)
-            {
-                Greenfoot.setWorld(new Level2());
-                String actieveWereld="Level2";
-                return;
-            }
-        }
-        break;
-    }
-    }
-    
 
     public boolean opGrond()
     {
@@ -172,9 +119,7 @@ public class Hero extends Mover {
         Tile tile = (Tile) onder;
         return tile != null && tile.isSolid ==true;
     }
-    
-    
-   
+
     public void handleInput() {
         if (Greenfoot.isKeyDown("space")&& opGrond()==true)
         {

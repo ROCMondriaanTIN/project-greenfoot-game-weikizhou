@@ -15,10 +15,7 @@ public class GemBlue extends Mover
     public void act() 
     {
         // Add your action code here.
-<<<<<<< HEAD
         setImage("gemBlue.png");
         applyVelocity();
-=======
->>>>>>> ab78c32387fff34aaaa8a0bceb13339c38cca90c
     }    
 }

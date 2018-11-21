@@ -6,13 +6,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author R. Springer
  */
 public class Level1 extends World {
-
     private CollisionEngine ce;
-<<<<<<< HEAD
-
-=======
     public String actieveWereld="Level1";
->>>>>>> ab78c32387fff34aaaa8a0bceb13339c38cca90c
     /**
      * Constructor for objects of class MyWorld.
      *
