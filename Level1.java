@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Level1 extends World {
 
     private CollisionEngine ce;
-    public String actieveWereld="Level1";
+
     /**
      * Constructor for objects of class MyWorld.
      *
@@ -60,22 +60,19 @@ public class Level1 extends World {
         
         // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
         camera.follow(hero);
-
+        addObject(new Deur(), 500, 1625);
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 200, 1400);
         addObject(hero, 200, 1400);
         addObject(new Enemy(), 1480, 1310);
-        
-        addObject(new Collectables("gemBlue.png","GemBlue"),748,1033);
-        addObject(new Collectables("coinGold.png","GoudenMunt"),1329,1433);
-        addObject(new Collectables("coinSilver.png","ZilverenMunt"),2748,1533);
-        addObject(new Collectables("coinSilver.png","ZilverenMunt"),1548,1233);
-        
-        addObject(new Deur(),500,1625);
-        addObject(new Collectables("keyYellow.png","YellowKey"),820,1565);
-        addObject(new Collectables("coinSilver.png","ZilverenMunt"),500,1625);
-        
-        addObject(new Collectables("coinSilver.png","ZilverenMunt"),547,1243);
+         
+//        addObject(new Collectables("coinSilver.png"),2748,1533);
+
+        addObject(new GemBlue(),748,1033);
+        addObject(new GoudenMunt(),1329,1433);
+        addObject(new ZilverenMunt(),1548,1233);
+        addObject(new YellowKey(),800,1565);
+
         addObject(new ResetButton(),50,50);
     
      

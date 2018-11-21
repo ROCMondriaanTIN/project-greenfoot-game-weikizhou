@@ -10,11 +10,12 @@ public class Hero extends Mover {
     private final double gravity;
     private final double acc;
     private final double drag;
-   // private int GoudenMunt;
-    //private int ZilverenMunt;
     public static int hero = 1;
-    //public boolean YellowKey =false;
-    //private int GemBlue;
+    //
+    private int GoudenMunt;
+    private int ZilverenMunt;
+    public boolean YellowKey =false;
+    private int GemBlue;
     
     public Hero() {
         super();
@@ -28,12 +29,12 @@ public class Hero extends Mover {
     @Override
     public void act() {
         handleInput();
-        /*getGoudenMunt();
+        getGoudenMunt();
         getZilverenMunt();
         getGemBlue();
         getYellowKey();
         getGemBlue();
-        DeurOpen();*/
+        DeurOpen();
         
         velocityX *= drag;
         velocityY += acc;
@@ -58,7 +59,7 @@ public class Hero extends Mover {
     }
     
     //hier zorg je ervoor dat het object weggaat als je het aanraakt
-    /*public int getZilverenMunt()
+    public int getZilverenMunt()
     {
     if(isTouching(ZilverenMunt.class))
     {
@@ -66,10 +67,10 @@ public class Hero extends Mover {
         ZilverenMunt++;    
     } 
     return ZilverenMunt;
-    }*/
+    }
     
     //hier zorg je ervoor dat het object weggaat als je het aanraakt
-    /*public int getGoudenMunt()
+    public int getGoudenMunt()
     {
     if(isTouching(GoudenMunt.class))
     {
@@ -77,17 +78,17 @@ public class Hero extends Mover {
         GoudenMunt+=2;    
     }
     return GoudenMunt;
-    }*/
-      /* public int getGemBlue()
+    }
+       public int getGemBlue()
     {
     if(isTouching(GemBlue.class))
     {
         removeTouching(GemBlue.class);    
     } 
     return GemBlue;
-    }*/
+    }
     
-    /*public boolean getYellowKey()
+    public boolean getYellowKey()
     {
     if(isTouching(YellowKey.class))
     {
@@ -95,9 +96,9 @@ public class Hero extends Mover {
         YellowKey =true;   
     }
     return YellowKey;
-    }*/
+    }
     
-    /*public void DeurOpen(){
+    public void DeurOpen(){
     for (Actor deur : getIntersectingObjects(Deur.class))
     {
         if(YellowKey==true)
@@ -112,7 +113,7 @@ public class Hero extends Mover {
     
     break;
     }
-    }*/
+    }
 
     public boolean opGrond()
     {
