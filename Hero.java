@@ -145,7 +145,7 @@ public class Hero extends Mover {
     {
     if(isTouching(KeyYellow.class))
     {
-        removeTouching(KeyYellow.class)
+        removeTouching(KeyYellow.class);
     }
     return KeyYellow;
     }
