@@ -1,6 +1,16 @@
 #Greenfoot project file
+<<<<<<< HEAD
 class.Deur.image=DeurVolledig.png
 class.Level2.image=board.jpg
+=======
+class.BeginScherm.image=Startscherm.png
+class.DeurMid.image=door_closedMid.png
+class.DeurTop.image=door_closedTop.png
+class.GameOverScherm.image=gameover.jpg
+class.GemBlue.image=gemBlue.png
+class.GoudenMunt.image=coinGold.png
+class.KeyYellow.image=keyYellow.png
+>>>>>>> ab78c32387fff34aaaa8a0bceb13339c38cca90c
 class.Playbutton.image=playbutton.png
 class.ResetButton.image=button-blue.png
 dependency1.from=SelecteerScherm
@@ -9,24 +19,25 @@ dependency1.type=UsesDependency
 dependency10.from=Level1
 dependency10.to=Collectables
 dependency10.type=UsesDependency
-dependency11.from=ResetButton
-dependency11.to=Level1
+dependency11.from=Level1
+dependency11.to=KeyYellow
 dependency11.type=UsesDependency
-dependency12.from=Tile
-dependency12.to=CollisionEngine
+dependency12.from=Level1
+dependency12.to=GemBlue
 dependency12.type=UsesDependency
-dependency13.from=Mover
-dependency13.to=Camera
+dependency13.from=ResetButton
+dependency13.to=Level1
 dependency13.type=UsesDependency
-dependency14.from=Hero
-dependency14.to=Tile
+dependency14.from=Tile
+dependency14.to=CollisionEngine
 dependency14.type=UsesDependency
-dependency15.from=Hero
-dependency15.to=Enemy
+dependency15.from=Mover
+dependency15.to=Camera
 dependency15.type=UsesDependency
-dependency16.from=Player
-dependency16.to=Level1
+dependency16.from=Hero
+dependency16.to=Tile
 dependency16.type=UsesDependency
+<<<<<<< HEAD
 dependency17.from=Collectables
 dependency17.to=Level2
 dependency17.type=UsesDependency
@@ -35,11 +46,22 @@ dependency18.to=TileEngine
 dependency18.type=UsesDependency
 dependency19.from=Camera
 dependency19.to=Mover
+=======
+dependency17.from=Hero
+dependency17.to=Enemy
+dependency17.type=UsesDependency
+dependency18.from=Player
+dependency18.to=Level1
+dependency18.type=UsesDependency
+dependency19.from=Camera
+dependency19.to=TileEngine
+>>>>>>> ab78c32387fff34aaaa8a0bceb13339c38cca90c
 dependency19.type=UsesDependency
 dependency2.from=BeginScherm
 dependency2.to=Playbutton
 dependency2.type=UsesDependency
 dependency20.from=Camera
+<<<<<<< HEAD
 dependency20.to=Tile
 dependency20.type=UsesDependency
 dependency21.from=Camera
@@ -67,14 +89,51 @@ dependency28.from=CollisionEngine
 dependency28.to=Tile
 dependency28.type=UsesDependency
 dependency29.from=TileFactory
+=======
+dependency20.to=Mover
+dependency20.type=UsesDependency
+dependency21.from=Camera
+dependency21.to=Tile
+dependency21.type=UsesDependency
+dependency22.from=Camera
+dependency22.to=CollisionEngine
+dependency22.type=UsesDependency
+dependency23.from=Playbutton
+dependency23.to=SelecteerScherm
+dependency23.type=UsesDependency
+dependency24.from=TileEngine
+dependency24.to=TileFactory
+dependency24.type=UsesDependency
+dependency25.from=TileEngine
+dependency25.to=Tile
+dependency25.type=UsesDependency
+dependency26.from=CollisionEngine
+dependency26.to=Camera
+dependency26.type=UsesDependency
+dependency27.from=CollisionEngine
+dependency27.to=TileEngine
+dependency27.type=UsesDependency
+dependency28.from=CollisionEngine
+dependency28.to=Mover
+dependency28.type=UsesDependency
+dependency29.from=CollisionEngine
+>>>>>>> ab78c32387fff34aaaa8a0bceb13339c38cca90c
 dependency29.to=Tile
 dependency29.type=UsesDependency
 dependency3.from=Level1
 dependency3.to=CollisionEngine
 dependency3.type=UsesDependency
 dependency30.from=TileFactory
+<<<<<<< HEAD
 dependency30.to=TileEngine
 dependency30.type=UsesDependency
+=======
+dependency30.to=Tile
+dependency30.type=UsesDependency
+dependency31.from=TileFactory
+dependency31.to=TileEngine
+dependency31.type=UsesDependency
+>>>>>>> ab78c32387fff34aaaa8a0bceb13339c38cca90c
 dependency4.from=Level1
 dependency4.to=TileEngine
 dependency4.type=UsesDependency
@@ -93,6 +152,7 @@ dependency8.type=UsesDependency
 dependency9.from=Level1
 dependency9.to=Enemy
 dependency9.type=UsesDependency
+<<<<<<< HEAD
 editor.fx.0.height=139
 editor.fx.0.width=974
 editor.fx.0.x=-7
@@ -101,6 +161,16 @@ height=1047
 package.numDependencies=30
 package.numTargets=24
 project.charset=windows-1252
+=======
+editor.fx.0.height=739
+editor.fx.0.width=816
+editor.fx.0.x=432
+editor.fx.0.y=90
+height=1026
+package.numDependencies=31
+package.numTargets=24
+project.charset=UTF-8
+>>>>>>> ab78c32387fff34aaaa8a0bceb13339c38cca90c
 publish.hasSource=false
 publish.locked=true
 publish.longDesc=
@@ -122,14 +192,22 @@ target1.width=110
 target1.x=0
 target1.y=0
 target10.height=50
+<<<<<<< HEAD
 target10.name=Playbutton
+=======
+target10.name=Camera
+>>>>>>> ab78c32387fff34aaaa8a0bceb13339c38cca90c
 target10.showInterface=false
 target10.type=ClassTarget
 target10.width=80
 target10.x=0
 target10.y=0
 target11.height=50
+<<<<<<< HEAD
 target11.name=Deur
+=======
+target11.name=Playbutton
+>>>>>>> ab78c32387fff34aaaa8a0bceb13339c38cca90c
 target11.showInterface=false
 target11.type=ClassTarget
 target11.width=80
@@ -192,7 +270,11 @@ target19.width=90
 target19.x=0
 target19.y=0
 target2.height=50
+<<<<<<< HEAD
 target2.name=YellowKey
+=======
+target2.name=KeyYellow
+>>>>>>> ab78c32387fff34aaaa8a0bceb13339c38cca90c
 target2.showInterface=false
 target2.type=ClassTarget
 target2.width=80
@@ -248,6 +330,7 @@ target4.width=90
 target4.x=0
 target4.y=0
 target5.height=50
+<<<<<<< HEAD
 target5.name=CollisionEngine
 target5.showInterface=false
 target5.type=ClassTarget
@@ -256,34 +339,60 @@ target5.x=0
 target5.y=0
 target6.height=50
 target6.name=Mover
+=======
+target5.name=DeurMid
+target5.showInterface=false
+target5.type=ClassTarget
+target5.width=80
+target5.x=0
+target5.y=0
+target6.height=50
+target6.name=CollisionEngine
+>>>>>>> ab78c32387fff34aaaa8a0bceb13339c38cca90c
 target6.showInterface=false
 target6.type=ClassTarget
-target6.width=80
+target6.width=130
 target6.x=0
 target6.y=0
 target7.height=50
+<<<<<<< HEAD
 target7.name=Collectables
+=======
+target7.name=Mover
+>>>>>>> ab78c32387fff34aaaa8a0bceb13339c38cca90c
 target7.showInterface=false
 target7.type=ClassTarget
 target7.width=90
 target7.x=0
 target7.y=0
 target8.height=50
+<<<<<<< HEAD
 target8.name=Enemy
+=======
+target8.name=DeurTop
+>>>>>>> ab78c32387fff34aaaa8a0bceb13339c38cca90c
 target8.showInterface=false
 target8.type=ClassTarget
 target8.width=80
 target8.x=0
 target8.y=0
 target9.height=50
+<<<<<<< HEAD
 target9.name=Camera
+=======
+target9.name=Enemy
+>>>>>>> ab78c32387fff34aaaa8a0bceb13339c38cca90c
 target9.showInterface=false
 target9.type=ClassTarget
 target9.width=80
 target9.x=0
 target9.y=0
 version=3.0.0
+<<<<<<< HEAD
 width=974
+=======
+width=1696
+>>>>>>> ab78c32387fff34aaaa8a0bceb13339c38cca90c
 world.lastInstantiated=BeginScherm
 xPosition=953
 yPosition=0

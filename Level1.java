@@ -8,7 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Level1 extends World {
 
     private CollisionEngine ce;
+<<<<<<< HEAD
 
+=======
+    public String actieveWereld="Level1";
+>>>>>>> ab78c32387fff34aaaa8a0bceb13339c38cca90c
     /**
      * Constructor for objects of class MyWorld.
      *
@@ -17,6 +21,7 @@ public class Level1 extends World {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1, false);
         this.setBackground("bg.png");
+      
 
         int[][] map = {
 		{-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
@@ -74,6 +79,8 @@ public class Level1 extends World {
         addObject(new YellowKey(),800,1565);
 
         addObject(new ResetButton(),50,50);
+        addObject(new KeyYellow(),1452,1032);
+        addObject(new GemBlue(),3256,1022);
     
      
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
