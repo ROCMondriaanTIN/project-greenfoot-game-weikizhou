@@ -476,19 +476,19 @@ public class TileFactory {
 		break;
 		case 125:
 		tile = new Tile("sign.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-		 tile.isSolid = true;
+	
 		break;
 		case 126:
 		tile = new Tile("signExit.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-		 tile.isSolid = true;
+		
 		break;
 		case 127:
 		tile = new Tile("signLeft.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-		 tile.isSolid = true;
+		
 		break;
 		case 128:
 		tile = new Tile("signRight.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-		 tile.isSolid = true;
+	
 		break;
 		case 129:
 		tile = new Tile("snow.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);

@@ -17,16 +17,17 @@ public class SelecteerScherm extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1); 
-        this.setBackground("bg.png");
+        this.setBackground("SelecteerSchermP.png");
   
         Player player1 = new Player(1);
-        addObject(player1,100,600);
+        
+        addObject(player1,500,450);
         
         Player player2 = new Player(2);
-        addObject(player2,500,600);
+        addObject(player2,700,450);
         
         Player player3 = new Player(3);
-        addObject(player3,900,600);
+        addObject(player3,900,450);
     }
    
     

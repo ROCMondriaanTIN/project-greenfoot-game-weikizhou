@@ -20,6 +20,7 @@ public class Hero extends Mover {
     public int direction = 2;
     public int animationTimer = 0;
     public int PicNum = 1;
+
     public Hero() {
         super();
         gravity = 9.8;
@@ -137,33 +138,32 @@ public class Hero extends Mover {
             animationTimer++;
         }
     }
-   
+
     //
     public void animatie() {
-        
+
         if (PicNum == 1) {
             setImage("alien" + Hero.hero + "_walk" + direction + "1.png");
-        }
-        if (PicNum == 2) {
+        } else if (PicNum == 2) {
             setImage("alien" + Hero.hero + "_walk" + direction + "2.png");
             PicNum = 1;
+            return;
         }
         PicNum++;
     }
-    public void animatieJump()
-    {
-        if(velocityY !=0)
-        {
-        setImage("alien"+Hero.hero+"_jump"+direction+".png");
+
+    public void animatieJump() {
+        if (velocityY != 0) {
+            setImage("alien" + Hero.hero + "_jump" + direction + ".png");
         }
     }
-    public void animatieStanding()
-    {
-        if(keySpace()==false && keyleft()== false &&keyRight()==false && velocityY == 0)
-        {
-            setImage("alien"+ Hero.hero +"_stand"+ direction + ".png");
+
+    public void animatieStanding() {
+        if (keySpace() == false && keyLeft() == false && keyRight() == false && velocityY == 0) {
+            setImage("alien" + Hero.hero + "_stand" + direction + ".png");
         }
     }
+
     //
     public int getWidth() {
         return getImage().getWidth();
@@ -172,6 +172,7 @@ public class Hero extends Mover {
     public int getHeight() {
         return getImage().getHeight();
     }
+
     //
     public boolean keySpace() {
         boolean keySpace = Greenfoot.isKeyDown("space");
@@ -188,8 +189,5 @@ public class Hero extends Mover {
         return keyLeft;
     }
 
-    private boolean keyleft() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     //
 }
