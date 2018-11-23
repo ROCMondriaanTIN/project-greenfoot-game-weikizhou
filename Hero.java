@@ -19,7 +19,7 @@ public class Hero extends Mover {
 
     public int direction = 2;
     public int animationTimer = 0;
-
+    public int PicNum = 1;
     public Hero() {
         super();
         gravity = 9.8;
@@ -112,8 +112,9 @@ public class Hero extends Mover {
     }
 
     public void handleInput() {
-
-        if (Greenfoot.isKeyDown("space") && opGrond() == true) {
+        animatieStanding();
+        animatieJump();
+        if (keySpace() && opGrond() == true) {
             velocityY = -14;
         } else if (Greenfoot.isKeyDown("up") && opGrond() == true) {
             velocityY = -14;
@@ -127,17 +128,19 @@ public class Hero extends Mover {
             }
             animationTimer++;
 
-        } else if (Greenfoot.isKeyDown("right")) {
+        } else if (keyRight()) {
             velocityX = 4;
             direction = 2;
             if (animationTimer % 10 == 0 && velocityY == 0) {
                 animatie();
             }
+            animationTimer++;
         }
     }
-    public int PicNum = 1;
-
+   
+    //
     public void animatie() {
+        
         if (PicNum == 1) {
             setImage("alien" + Hero.hero + "_walk" + direction + "1.png");
         }
@@ -147,7 +150,21 @@ public class Hero extends Mover {
         }
         PicNum++;
     }
-
+    public void animatieJump()
+    {
+        if(velocityY !=0)
+        {
+        setImage("alien"+Hero.hero+"_jump"+direction+".png");
+        }
+    }
+    public void animatieStanding()
+    {
+        if(keySpace()==false && keyleft()== false &&keyRight()==false && velocityY == 0)
+        {
+            setImage("alien"+ Hero.hero +"_stand"+ direction + ".png");
+        }
+    }
+    //
     public int getWidth() {
         return getImage().getWidth();
     }
@@ -155,7 +172,7 @@ public class Hero extends Mover {
     public int getHeight() {
         return getImage().getHeight();
     }
-
+    //
     public boolean keySpace() {
         boolean keySpace = Greenfoot.isKeyDown("space");
         return keySpace;
@@ -170,4 +187,9 @@ public class Hero extends Mover {
         boolean keyLeft = Greenfoot.isKeyDown("left");
         return keyLeft;
     }
+
+    private boolean keyleft() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    //
 }
