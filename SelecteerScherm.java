@@ -20,7 +20,6 @@ public class SelecteerScherm extends World
         this.setBackground("SelecteerSchermP.png");
   
         Player player1 = new Player(1);
-        
         addObject(player1,500,450);
         
         Player player2 = new Player(2);

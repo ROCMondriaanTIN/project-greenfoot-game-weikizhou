@@ -15,7 +15,7 @@ public class Enemy extends Mover {
 
     public Enemy() {
         super();
-        setImage("pokerMad.png");
+        setImage("fireball.png");
         getImage().mirrorHorizontally();
         walkRange = 140;
         firstAct = true;
