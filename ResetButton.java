@@ -15,8 +15,10 @@ public class ResetButton extends Actor
     public void act() 
     {
         // Add your action code here.
+     
         click();
     }    
+
     public void click()
     {
         if(Greenfoot.mouseClicked(this))

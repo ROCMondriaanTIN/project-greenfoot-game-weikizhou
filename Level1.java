@@ -15,7 +15,7 @@ public class Level1 extends World {
     public Level1() {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1, false);
-        this.setBackground("bg.png");
+        this.setBackground("BackGroundLandScape.png");
       
 
         int[][] map = {
@@ -55,7 +55,9 @@ public class Level1 extends World {
         // moet de klasse Mover extenden voor de camera om te werken
         Hero hero = new Hero();
         
-        ResetButton resetButton = new ResetButton();
+        
+        
+        addObject(new ResetButton(),50,50);
         
         // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
         camera.follow(hero);

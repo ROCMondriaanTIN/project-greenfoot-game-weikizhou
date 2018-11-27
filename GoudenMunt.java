@@ -15,7 +15,7 @@ public class GoudenMunt extends Mover
     public void act() 
     {
         // Add your action code here.
+        applyVelocity();
         setImage("coinGold.png");
-          applyVelocity();
     }    
 }

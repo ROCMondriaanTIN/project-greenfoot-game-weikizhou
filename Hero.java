@@ -20,7 +20,9 @@ public class Hero extends Mover {
     public int direction = 2;
     public int animationTimer = 0;
     public int PicNum = 1;
-
+    
+    Scorenbord scb;
+    
     public Hero() {
         super();
         gravity = 9.8;
@@ -38,6 +40,12 @@ public class Hero extends Mover {
         getGemBlue();
         getYellowKey();
         DeurOpen();
+        
+        if(scb ==null)
+        {
+        scb = new Scorenbord();
+        getWorld().addObject(scb, +50,+50);
+        }
 
         velocityX *= drag;
         velocityY += acc;
@@ -64,6 +72,7 @@ public class Hero extends Mover {
     public int getZilverenMunt() {
         if (isTouching(ZilverenMunt.class)) {
             removeTouching(ZilverenMunt.class);
+            scb.updateScorenZ();
             ZilverenMunt++;
         }
         return ZilverenMunt;
@@ -73,6 +82,7 @@ public class Hero extends Mover {
     public int getGoudenMunt() {
         if (isTouching(GoudenMunt.class)) {
             removeTouching(GoudenMunt.class);
+            scb.updateScorenG();
             GoudenMunt += 2;
         }
         return GoudenMunt;
@@ -81,6 +91,7 @@ public class Hero extends Mover {
     public int getGemBlue() {
         if (isTouching(GemBlue.class)) {
             removeTouching(GemBlue.class);
+            scb.updateScorenGB();
         }
         return GemBlue;
     }
@@ -189,5 +200,7 @@ public class Hero extends Mover {
         return keyLeft;
     }
 
-    //
+   
+    
+    
 }
