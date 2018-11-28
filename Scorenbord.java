@@ -15,6 +15,13 @@ public class Scorenbord extends Actor
     private int xPosZilverenMunt =950;
     private int xPosGemBlue = 950;
     private boolean xPosGoudenSleutel =false;
+   
+    private Leven leven1;
+    private Leven leven2;
+    
+    public Scorenbord(){
+        
+    }
  
     /**
      * Act - do whatever the Scorenbord wants to do. This method is called whenever
@@ -22,35 +29,45 @@ public class Scorenbord extends Actor
      */
     public void act() 
     {
+        leven1 = new Leven();
+        leven1.setImage("hud_heartFull.png");
+        getWorld().addObject(leven1, 50, 50);
+        
+        leven2 = new Leven();
+        leven2.setImage("hud_heartFull.png");
+        getWorld().addObject(leven1, 110, 50);
         // Add your action code here.
         update();
+        Leven leven1= new Leven();
+        Leven leven2= new Leven();
+        
     }    
-    public void updateScorenZ()
+    public void updateScorenSilver()
     {
         score+=1;
         getWorld().addObject(new Zilveren(),xPosZilverenMunt,60);
         xPosZilverenMunt-=20;
         update();
     }
-    public void updateScorenG()
+    public void updateScorenGold()
     {
         score+=2;
         getWorld().addObject(new Gouden(),xPosGoudenMunt,100);
         xPosZilverenMunt-=20;
         update();
     }
-    public void updateScorenGB()
+    public void updateScorenGemBlue()
     {
         getWorld().addObject(new Diamant(),xPosGemBlue,140);
         xPosZilverenMunt-=20;
     }
-    /*public void updateScorenH()
+    public void updateScorenHeart()
     {   
-        //getWorld().removeObject(this);
+        getWorld().removeObject(leven2);
         Leven-=1;
         update();
-    }*/
-    public void updateScorenGS()
+    }
+    public void updateScorenGoldKey()
     {       
           xPosGoudenSleutel = true;
           getWorld().addObject(new GoudenSleutel(),500,60);

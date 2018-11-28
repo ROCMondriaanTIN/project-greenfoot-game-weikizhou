@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Leven extends Scorenbord
+public class Leven extends Actor
 {
     
     /**
@@ -17,5 +17,7 @@ public class Leven extends Scorenbord
     {
         // Add your action code here.
         setImage("hud_heartFull.png");
+        
     }  
+    
 }

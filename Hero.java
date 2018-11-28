@@ -23,6 +23,8 @@ public class Hero extends Mover {
     public int animationTimer = 0;
     public int PicNum = 1;
     
+
+    
     Scorenbord scb;
     
     public Hero() {
@@ -43,6 +45,8 @@ public class Hero extends Mover {
         getYellowKey();
         DeurOpen();
         
+       
+        
         if(scb ==null)
         {
         scb = new Scorenbord();
@@ -59,14 +63,13 @@ public class Hero extends Mover {
         for (Actor enemy : getIntersectingObjects(Enemy.class)) {
             if (enemy != null) {
                 getWorld().removeObject(this);
-                //scb.updateScorenH();
+                scb.updateScorenHeart();
                
                 
                 break;
             }
         }
     }
-
     //om te kijken wat de cordinatie is
     public String inspectMove() {
         String inspectmove = "X:" + this.getX() + "Y:" + this.getY();
@@ -77,7 +80,7 @@ public class Hero extends Mover {
     public int getZilverenMunt() {
         if (isTouching(ZilverenMunt.class)) {
             removeTouching(ZilverenMunt.class);
-            scb.updateScorenZ();
+            scb.updateScorenSilver();
             ZilverenMunt++;
         }
         return ZilverenMunt;
@@ -87,7 +90,7 @@ public class Hero extends Mover {
     public int getGoudenMunt() {
         if (isTouching(GoudenMunt.class)) {
             removeTouching(GoudenMunt.class);
-            scb.updateScorenG();
+            scb.updateScorenGold();
             GoudenMunt += 2;
         }
         return GoudenMunt;
@@ -96,7 +99,7 @@ public class Hero extends Mover {
     public int getGemBlue() {
         if (isTouching(GemBlue.class)) {
             removeTouching(GemBlue.class);
-            scb.updateScorenGB();
+            scb.updateScorenGemBlue();
         }
         return GemBlue;
     }
@@ -104,7 +107,7 @@ public class Hero extends Mover {
     public boolean getYellowKey() {
         if (isTouching(YellowKey.class)) {
             removeTouching(YellowKey.class);
-            scb.updateScorenGS();
+            scb.updateScorenGoldKey();
             YellowKey = true;
         }
         return YellowKey;
