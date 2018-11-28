@@ -15,7 +15,7 @@ public class YellowKey extends Mover
     public void act() 
     {
         // Add your action code here.
+        applyVelocity();
         setImage("keyYellow.png");
-          applyVelocity();
     }    
 }

@@ -57,7 +57,11 @@ public class Level1 extends World {
         
         
         
-        addObject(new ResetButton(),50,50);
+        addObject(new YellowKeyDisabled(),500,60);
+        
+        addObject(new Leven(),50,50);
+        addObject(new Leven(),110,50);
+        //addObject(new ResetButton(),50,50);
         
         // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
         camera.follow(hero);

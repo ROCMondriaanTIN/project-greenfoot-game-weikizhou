@@ -16,7 +16,9 @@ public class Hero extends Mover {
     private int ZilverenMunt;
     public boolean YellowKey = false;
     private int GemBlue;
-
+    
+    public static int Leven =2;
+    
     public int direction = 2;
     public int animationTimer = 0;
     public int PicNum = 1;
@@ -44,7 +46,7 @@ public class Hero extends Mover {
         if(scb ==null)
         {
         scb = new Scorenbord();
-        getWorld().addObject(scb, +50,+50);
+        getWorld().addObject(scb, -10,-10);
         }
 
         velocityX *= drag;
@@ -57,6 +59,9 @@ public class Hero extends Mover {
         for (Actor enemy : getIntersectingObjects(Enemy.class)) {
             if (enemy != null) {
                 getWorld().removeObject(this);
+                //scb.updateScorenH();
+               
+                
                 break;
             }
         }
@@ -99,6 +104,7 @@ public class Hero extends Mover {
     public boolean getYellowKey() {
         if (isTouching(YellowKey.class)) {
             removeTouching(YellowKey.class);
+            scb.updateScorenGS();
             YellowKey = true;
         }
         return YellowKey;
@@ -150,9 +156,8 @@ public class Hero extends Mover {
         }
     }
 
-    //
+    
     public void animatie() {
-
         if (PicNum == 1) {
             setImage("alien" + Hero.hero + "_walk" + direction + "1.png");
         } else if (PicNum == 2) {
@@ -175,7 +180,7 @@ public class Hero extends Mover {
         }
     }
 
-    //
+    
     public int getWidth() {
         return getImage().getWidth();
     }
@@ -184,7 +189,7 @@ public class Hero extends Mover {
         return getImage().getHeight();
     }
 
-    //
+    
     public boolean keySpace() {
         boolean keySpace = Greenfoot.isKeyDown("space");
         return keySpace;
