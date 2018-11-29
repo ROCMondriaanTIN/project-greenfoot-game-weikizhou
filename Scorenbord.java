@@ -18,10 +18,6 @@ public class Scorenbord extends Actor
    
     private Leven leven1;
     private Leven leven2;
-    
-    public Scorenbord(){
-        
-    }
  
     /**
      * Act - do whatever the Scorenbord wants to do. This method is called whenever
@@ -35,11 +31,9 @@ public class Scorenbord extends Actor
         
         leven2 = new Leven();
         leven2.setImage("hud_heartFull.png");
-        getWorld().addObject(leven1, 110, 50);
+        getWorld().addObject(leven2, 110, 50);
         // Add your action code here.
         update();
-        Leven leven1= new Leven();
-        Leven leven2= new Leven();
         
     }    
     public void updateScorenSilver()
@@ -61,12 +55,28 @@ public class Scorenbord extends Actor
         getWorld().addObject(new Diamant(),xPosGemBlue,140);
         xPosZilverenMunt-=20;
     }
-    public void updateScorenHeart()
+    /*public void updateScorenHeart()
     {   
-        getWorld().removeObject(leven2);
-        Leven-=1;
-        update();
-    }
+        if(leven1!=null)
+        {
+            getWorld().removeObject(leven1);
+            Leven-=1;
+            if(Leven==0)
+            {
+             Greenfoot.setWorld(new GameOverScherm());
+            }
+        }
+        
+        else if(leven2!=null)
+        {
+           getWorld().removeObject(leven2);
+           Leven-=1;
+           if(Leven==0)
+           {
+             Greenfoot.setWorld(new GameOverScherm());
+            }
+        }
+    }*/
     public void updateScorenGoldKey()
     {       
           xPosGoudenSleutel = true;
@@ -81,9 +91,28 @@ public class Scorenbord extends Actor
             xPosLeven+=50;
             score=0;
         }
-        if(Leven==0)
+    }
+        public void updateScorenHeart()
+    {   
+        if(leven1!=null)
         {
-            Greenfoot.setWorld(new GameOverScherm());
+            getWorld().removeObject(leven1);
+            Leven-=1;
+            if(Leven<=0)
+            {
+             Greenfoot.setWorld(new GameOverScherm());
+            }
+        }
+        
+        else if(leven2!=null)
+        {
+           getWorld().removeObject(leven2);
+           Leven-=1;
+           if(Leven<=0)
+           {
+             Greenfoot.setWorld(new GameOverScherm());
+           }
         }
     }
+ 
 }

@@ -23,6 +23,7 @@ public class Hero extends Mover {
     public int animationTimer = 0;
     public int PicNum = 1;
     
+    private Hero hero1;
 
     
     Scorenbord scb;
@@ -35,7 +36,7 @@ public class Hero extends Mover {
         setImage("p" + this.hero + "_front.png");
 
     }
-
+    
     @Override
     public void act() {
         handleInput();
@@ -62,12 +63,18 @@ public class Hero extends Mover {
 
         for (Actor enemy : getIntersectingObjects(Enemy.class)) {
             if (enemy != null) {
-                getWorld().removeObject(this);
-                scb.updateScorenHeart();
-               
+                //getWorld().removeObject(this);
+                scb.updateScorenHeart();}
+                
+                else if(Leven>0){
+                this.setLocation(200, 1400);
+                
+                // hero1 = new Hero();
+                //getWorld().addObject(new Hero(),200,1400);
+            }
                 
                 break;
-            }
+            
         }
     }
     //om te kijken wat de cordinatie is
