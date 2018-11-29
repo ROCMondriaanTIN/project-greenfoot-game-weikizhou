@@ -64,7 +64,7 @@ public class Hero extends Mover {
         for (Actor enemy : getIntersectingObjects(Enemy.class)) {
             if (enemy != null) {
                 //getWorld().removeObject(this);
-                //scb.updateScorenHeart();}
+                scb.updateScorenHeart();}
         
    
             
@@ -73,7 +73,6 @@ public class Hero extends Mover {
             
         }
     }
-}
     //om te kijken wat de cordinatie is
     public String inspectMove() {
         String inspectmove = "X:" + this.getX() + "Y:" + this.getY();
@@ -137,12 +136,17 @@ public class Hero extends Mover {
     }
 
     public void handleInput() {
+<<<<<<< HEAD
         animatieStanding();
         animatieJump();
         if (keySpace() && opGrond() == true) {
             velocityY = -14;
         } else if (Greenfoot.isKeyDown("up") && opGrond() == true) {
             velocityY = -14;
+=======
+        if (Greenfoot.isKeyDown("w")) {
+            velocityY = -20;
+>>>>>>> 4372fff5ea53a9c16ee13c8083969eac7aeee2f9
         }
 
         if (keyLeft() && keyRight() == false) {
