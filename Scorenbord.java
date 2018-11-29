@@ -8,7 +8,7 @@ import java.util.ArrayList;
  */
 public class Scorenbord extends Actor
 {   
-    public static int Leven =10;
+    public  int leven =2;
     private int score =0;
     private int xPosLeven =20;
     private int xPosGoudenMunt =950;
@@ -16,8 +16,8 @@ public class Scorenbord extends Actor
     private int xPosGemBlue = 950;
     private boolean xPosGoudenSleutel =false;
    
-    ArrayList<Leven> hartje;
-
+    ArrayList<Leven> hartje =new ArrayList<Leven>();
+    
  
     /**
      * Act - do whatever the Scorenbord wants to do. This method is called whenever
@@ -57,7 +57,7 @@ public class Scorenbord extends Actor
     {
         if(score==20)
         {
-            Leven++;
+            leven++;
             getWorld().addObject(new Leven(),xPosLeven,40);
             xPosLeven+=50;
             score=0;
@@ -65,7 +65,7 @@ public class Scorenbord extends Actor
     }
     public void hartjeEraf()
     {
-        Leven--;
+        leven--;
         latenZien();
     }
     public void latenZien(){
@@ -74,16 +74,16 @@ public class Scorenbord extends Actor
         }
         hartje.clear();
         
-        for(int i =0; i< Leven;i++){
+        for(int i =0; i< leven;i++){
         Leven leven = new Leven();
         leven.setImage("hud_heartFull.png");
         getWorld().addObject(leven, 50+(i*60), 50);
         hartje.add(leven);
        
-        /*if(leven==0)
+        if(leven == 0)
         {
             Greenfoot.setWorld(new GameOverScherm());
-        }*/
+        }
         }
     }
 
