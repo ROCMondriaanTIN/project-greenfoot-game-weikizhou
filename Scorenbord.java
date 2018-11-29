@@ -92,27 +92,29 @@ public class Scorenbord extends Actor
             score=0;
         }
     }
-        public void updateScorenHeart()
-    {   
-        if(leven1!=null)
-        {
-            getWorld().removeObject(leven1);
-            Leven-=1;
-            if(Leven<=0)
-            {
-             Greenfoot.setWorld(new GameOverScherm());
-            }
-        }
-        
-        else if(leven2!=null)
-        {
-           getWorld().removeObject(leven2);
-           Leven-=1;
-           if(Leven<=0)
-           {
-             Greenfoot.setWorld(new GameOverScherm());
-           }
-        }
-    }
+ 
+    // public void updateScorenHeart()
+    // {   
+           // if(leven1!=null)
+           // {
+              // getWorld().removeObject(leven1);
+              // Leven-=1;
+              // /*if(Leven==0)
+              // {
+               // Greenfoot.setWorld(new GameOverScherm());
+              // }*/
+           // }
+            
+           // else if(leven2!=null)
+           // {
+              // getWorld().removeObject(leven2);
+              // Leven-=1;
+              // /*if(Leven==0)
+              // {
+                // Greenfoot.setWorld(new GameOverScherm());
+              // }*/
+           // }
+    // }
+   
  
 }

@@ -65,13 +65,9 @@ public class Hero extends Mover {
             if (enemy != null) {
                 //getWorld().removeObject(this);
                 scb.updateScorenHeart();}
-                
-                else if(Leven>0){
-                this.setLocation(200, 1400);
-                
-                // hero1 = new Hero();
-                //getWorld().addObject(new Hero(),200,1400);
-            }
+        
+   
+            
                 
                 break;
             
