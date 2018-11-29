@@ -64,11 +64,8 @@ public class Hero extends Mover {
         for (Actor enemy : getIntersectingObjects(Enemy.class)) {
             if (enemy != null) {
                 //getWorld().removeObject(this);
-                //scb.updateScorenHeart();}
-        
-   
-            
-                
+                //scb.updateScorenHeart();
+                scb.hartjeEraf();
                 break;
             
         }

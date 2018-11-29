@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.ArrayList;
 /**
  * Write a description of class Scorenbord here.
  * 
@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Scorenbord extends Actor
 {   
-    public static int Leven =2;
+    public static int Leven =10;
     private int score =0;
     private int xPosLeven =20;
     private int xPosGoudenMunt =950;
@@ -16,8 +16,8 @@ public class Scorenbord extends Actor
     private int xPosGemBlue = 950;
     private boolean xPosGoudenSleutel =false;
    
-    private Leven leven1;
-    private Leven leven2;
+    ArrayList<Leven> hartje;
+
  
     /**
      * Act - do whatever the Scorenbord wants to do. This method is called whenever
@@ -25,16 +25,9 @@ public class Scorenbord extends Actor
      */
     public void act() 
     {
-        leven1 = new Leven();
-        leven1.setImage("hud_heartFull.png");
-        getWorld().addObject(leven1, 50, 50);
-        
-        leven2 = new Leven();
-        leven2.setImage("hud_heartFull.png");
-        getWorld().addObject(leven2, 110, 50);
         // Add your action code here.
         update();
-        
+        latenZien();
     }    
     public void updateScorenSilver()
     {
@@ -55,28 +48,6 @@ public class Scorenbord extends Actor
         getWorld().addObject(new Diamant(),xPosGemBlue,140);
         xPosZilverenMunt-=20;
     }
-    /*public void updateScorenHeart()
-    {   
-        if(leven1!=null)
-        {
-            getWorld().removeObject(leven1);
-            Leven-=1;
-            if(Leven==0)
-            {
-             Greenfoot.setWorld(new GameOverScherm());
-            }
-        }
-        
-        else if(leven2!=null)
-        {
-           getWorld().removeObject(leven2);
-           Leven-=1;
-           if(Leven==0)
-           {
-             Greenfoot.setWorld(new GameOverScherm());
-            }
-        }
-    }*/
     public void updateScorenGoldKey()
     {       
           xPosGoudenSleutel = true;
@@ -92,29 +63,30 @@ public class Scorenbord extends Actor
             score=0;
         }
     }
- 
-    // public void updateScorenHeart()
-    // {   
-           // if(leven1!=null)
-           // {
-              // getWorld().removeObject(leven1);
-              // Leven-=1;
-              // /*if(Leven==0)
-              // {
-               // Greenfoot.setWorld(new GameOverScherm());
-              // }*/
-           // }
-            
-           // else if(leven2!=null)
-           // {
-              // getWorld().removeObject(leven2);
-              // Leven-=1;
-              // /*if(Leven==0)
-              // {
-                // Greenfoot.setWorld(new GameOverScherm());
-              // }*/
-           // }
-    // }
+    public void hartjeEraf()
+    {
+        Leven--;
+        latenZien();
+    }
+    public void latenZien(){
+        for(int i =0; i < hartje.size();i++){
+        getWorld().removeObject(hartje.get(i));
+        }
+        hartje.clear();
+        
+        for(int i =0; i< Leven;i++){
+        Leven leven = new Leven();
+        leven.setImage("hud_heartFull.png");
+        getWorld().addObject(leven, 50+(i*60), 50);
+        hartje.add(leven);
+       
+        /*if(leven==0)
+        {
+            Greenfoot.setWorld(new GameOverScherm());
+        }*/
+        }
+    }
+
    
  
 }
