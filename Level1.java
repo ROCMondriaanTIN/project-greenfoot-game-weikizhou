@@ -57,7 +57,7 @@ public class Level1 extends World {
         
         
         
-        addObject(new YellowKeyDisabled(),500,60);
+        addObject(new YellowKeyDisabled(),50,110);
         
         //addObject(new ResetButton(),50,50);
         
