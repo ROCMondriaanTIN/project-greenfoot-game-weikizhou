@@ -63,7 +63,8 @@ public class Level1 extends World {
         
         // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
         camera.follow(hero);
-        addObject(new Deur(), 4830, 655);
+        //addObject(new Deur(), 4830, 655);
+        addObject(new Deur(), 2000, 1565);
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 200, 1400);
         addObject(hero, 200, 1400);
