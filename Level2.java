@@ -18,7 +18,7 @@ public class Level2 extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1); 
-        //this.setBackground("");
+        this.setBackground("Level2Background.png");
         
          int[][] map = {
         {-1,-1,-1,-1,102,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,102,-1,-1,-1,-1,-1,102,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
@@ -66,12 +66,12 @@ public class Level2 extends World
         //addObject(new Enemy("snailWalk1.png"),600,1625);
         
         //Colectables
-        addObject(new ZilverenMunt(),2805,935);
+        /*addObject(new ZilverenMunt(),2805,935);
         addObject(new ZilverenMunt(),1915,1075);
         addObject(new ZilverenMunt(),1330,1285);
         addObject(new GemBlue(),2500,1215);
         addObject(new GoudenMunt(),2700,1565);
-        addObject(new YellowKey(),4872,1145);
+        addObject(new YellowKey(),4872,1145);*/
 
         //addObject(new ResetButton(),50,50);
 

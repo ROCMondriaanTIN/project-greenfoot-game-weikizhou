@@ -46,8 +46,6 @@ public class Hero extends Mover {
         getYellowKey();
         DeurOpen();
         
-       
-        
         if(scb ==null)
         {
         scb = new Scorenbord();
@@ -59,7 +57,7 @@ public class Hero extends Mover {
         if (velocityY > gravity) {
             velocityY = gravity;
         }
-        applyVelocity();
+         applyVelocity();
 
         for (Actor enemy : getIntersectingObjects(Enemy.class)) {
             if (enemy != null) {
@@ -69,9 +67,17 @@ public class Hero extends Mover {
                 scb.hartjeEraf();
                 break;
             
-        }
-    }
-}
+          }
+        }     
+    
+        for(Actor lavaTile: getIntersectingObjects(LavaTile.class)) {
+               if (lavaTile != null){
+                        this.setLocation(200, 1400);
+                        setImage("liquidLavaTop_mid");
+                        break;
+                  }
+         }
+    }      
     //om te kijken wat de cordinatie is
     public String inspectMove() {
         String inspectmove = "X:" + this.getX() + "Y:" + this.getY();

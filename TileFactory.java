@@ -336,15 +336,15 @@ public class TileFactory {
 		break;
 		case 90:
 		tile = new Tile("liquidLava.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-		 tile.isSolid = true;
+		
 		break;
 		case 91:
 		tile = new Tile("liquidLavaTop.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-		 tile.isSolid = true;
+		 
 		break;
 		case 92:
 		tile = new Tile("liquidLavaTop_mid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-		 tile.isSolid = true;
+		 
 		break;
 		case 93:
 		tile = new Tile("liquidWater.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
