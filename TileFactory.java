@@ -92,7 +92,7 @@ public class TileFactory {
 		break;
 		case 19:
 		tile = new Tile("castleCenter.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-		
+		 tile.isSolid = true;
 		break;
 		case 20:
 		tile = new Tile("castleCenter_rounded.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
@@ -568,7 +568,7 @@ public class TileFactory {
 		break;
 		case 150:
 		tile = new Tile("stoneCenter.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-		 tile.isSolid = true;
+		
 		break;
 		case 151:
 		tile = new Tile("stoneCenter_rounded.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
@@ -1410,6 +1410,31 @@ public class TileFactory {
 		   tile = new Tile("tundraRight.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
 		 tile.isSolid = true;
 		break;
+		case 364:
+	   tile = new Tile("spikes.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+	tile.isSolid = true;
+		break;
+		 case 365:
+			   tile = new Tile("springboardDown.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+			 tile.isSolid = true;
+		break;
+		 case 366:
+			   tile = new Tile("springboardUp.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+			 tile.isSolid = true;
+		break;
+		 case 367:
+			   tile = new Tile("weight.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+			 tile.isSolid = true;
+		break;
+		 case 368:
+			   tile = new Tile("weightChained.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+			 tile.isSolid = true;
+		break;
+		 case 369:
+			   tile = new Tile("plant.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+			 tile.isSolid = true;
+		break;
+
 											
 									
 									

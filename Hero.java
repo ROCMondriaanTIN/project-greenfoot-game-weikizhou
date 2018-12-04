@@ -165,6 +165,15 @@ public class Hero extends Mover {
             }
             animationTimer++;
         }
+            
+        for(Actor jumpTile: getIntersectingObjects(JumpTile.class)) {
+               if (jumpTile != null){
+                   if(Greenfoot.isKeyDown("up")||keySpace()){
+                        velocityY=-15;
+                        break;
+                    }
+                  }
+         }
     }
 
     
