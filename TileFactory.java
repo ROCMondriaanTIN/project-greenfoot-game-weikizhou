@@ -335,15 +335,15 @@ public class TileFactory {
 		 tile.isSolid = true;
 		break;
 		case 90:
-		tile = new Tile("liquidLava.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+		tile = new LavaTile("liquidLava.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
 		
 		break;
 		case 91:
-		tile = new Tile("liquidLavaTop.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+		tile = new LavaTile("liquidLavaTop.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
 		 
 		break;
 		case 92:
-		tile = new Tile("liquidLavaTop_mid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+		tile = new LavaTile("liquidLavaTop_mid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
 		 
 		break;
 		case 93:
@@ -1415,11 +1415,11 @@ public class TileFactory {
 	tile.isSolid = true;
 		break;
 		 case 365:
-			   tile = new Tile("springboardDown.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+			   tile = new JumpTile("springboardDown.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
 			 tile.isSolid = true;
 		break;
 		 case 366:
-			   tile = new Tile("springboardUp.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+			   tile = new JumpTile("springboardUp.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
 			 tile.isSolid = true;
 		break;
 		 case 367:

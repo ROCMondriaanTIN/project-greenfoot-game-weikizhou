@@ -8,8 +8,8 @@ import java.util.ArrayList;
  */
 public class Scorenbord extends Actor
 {   
-    public  int leven =2;
-    private int score =0;
+    public  static int leven =2;
+    public static int score =0;
     private int xPosLeven =20;
     private int xPosGoudenMunt =970;
     private int xPosZilverenMunt =970;

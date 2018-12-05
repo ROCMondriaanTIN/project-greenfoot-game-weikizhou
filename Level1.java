@@ -71,7 +71,7 @@ public class Level1 extends World {
         addObject(camera, 200, 1400);
         addObject(hero, 200, 1400);
         addObject(new Enemy(), 1600, 1540);
-        //addObject(new Enemy("snailWalk1.png"),600,1625);
+        addObject(new Enemy("snailWalk1.png"),600,1625);
           
         addObject(new ZilverenMunt(),2805,935);
         addObject(new ZilverenMunt(),1915,1075);

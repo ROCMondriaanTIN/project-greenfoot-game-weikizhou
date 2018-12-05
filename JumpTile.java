@@ -6,33 +6,23 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class JumpTile extends Actor
+public class JumpTile extends Tile
 {   
-    public int frame=1;
+  
     /**
      * Act - do whatever the JumpTile wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-        // Add your action code here.
-        setImage("springboardDown.png");
-        setImage("springboardUp.png");
-        jumpAnimatie(); 
-       
-       
+               setImage("springboardDown.png");
     }    
-    public void jumpAnimatie()
-    {   
-        frame++;
-        if(frame==0){
-        setImage("springboardDown.png");
-        }
-        if(frame==1){
-         setImage("springboardUp.png");
-         frame=0;
-        }
+    public JumpTile(String image, int width, int height)
+    {
+        super(image, width, height);
+
     }
 
-}
 
+   
+}

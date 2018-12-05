@@ -45,6 +45,7 @@ public class Hero extends Mover {
         getGemBlue();
         getYellowKey();
         DeurOpen();
+        JumpTile();
         
         if(scb ==null)
         {
@@ -72,8 +73,9 @@ public class Hero extends Mover {
     
         for(Actor lavaTile: getIntersectingObjects(LavaTile.class)) {
                if (lavaTile != null){
-                        this.setLocation(200, 1400);
-                        setImage("liquidLavaTop_mid");
+                        this.setLocation(470, 1635);
+                        //setImage("liquidLavaTop_mid");
+                        scb.hartjeEraf();
                         break;
                   }
          }
@@ -99,7 +101,7 @@ public class Hero extends Mover {
         if (isTouching(GoudenMunt.class)) {
             removeTouching(GoudenMunt.class);
             scb.updateScorenGold();
-            GoudenMunt += 2;
+            GoudenMunt += 20;
         }
         return GoudenMunt;
     }
@@ -150,7 +152,7 @@ public class Hero extends Mover {
         }
 
         if (keyLeft() && keyRight() == false) {
-            velocityX = -4;
+            velocityX = -7;
             direction = 1;
             if (animationTimer % 10 == 0 && velocityY == 0) {
                 animatie();
@@ -158,7 +160,7 @@ public class Hero extends Mover {
             animationTimer++;
 
         } else if (keyRight()) {
-            velocityX = 4;
+            velocityX = 7;
             direction = 2;
             if (animationTimer % 10 == 0 && velocityY == 0) {
                 animatie();
@@ -166,16 +168,18 @@ public class Hero extends Mover {
             animationTimer++;
         }
             
-        for(Actor jumpTile: getIntersectingObjects(JumpTile.class)) {
-               if (jumpTile != null){
-                   if(Greenfoot.isKeyDown("up")||keySpace()){
-                        velocityY=-15;
-                        break;
-                    }
-                  }
+
+ 
+    }
+    public void JumpTile()
+       {
+      
+           for(Tile jumpTile: getIntersectingObjects(JumpTile.class)) {
+              velocityY=-25;
+              break;
          }
     }
-
+    
     
     public void animatie() {
         if (PicNum == 1) {

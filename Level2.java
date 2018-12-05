@@ -18,7 +18,7 @@ public class Level2 extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1, false); 
-        this.setBackground("Level2background2.png");
+        this.setBackground("cave.png");
         
          int[][] map = {
 	    {-1,-1,-1,-1,102,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,102,-1,-1,-1,-1,-1,102,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
@@ -61,7 +61,7 @@ public class Level2 extends World
         
         addObject(new Deur(), 4830, 655);
         
-        addObject(new JumpTile(),260,1635);
+        
         
         addObject(camera, 470, 1635);
         addObject(hero, 470, 1635);
