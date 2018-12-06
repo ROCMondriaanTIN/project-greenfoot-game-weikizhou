@@ -55,7 +55,8 @@ public class Level2 extends World
         
         Hero hero = new Hero();
         
-        addObject(new YellowKeyDisabled(),50,110);
+      
+        addObject(new RandomObjecten("hud_keyYellow_disabled.png"),50,110);
         
         camera.follow(hero);
         

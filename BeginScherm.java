@@ -19,7 +19,8 @@ public class BeginScherm extends World
         super(1000, 800, 1);
         this.setBackground("BeginScherm.png");
         
-        Playbutton playbutton = new Playbutton();
-        addObject(playbutton,700,300);
+        addObject(new LevelButtons("controllsbutton.png"),700,600);
+        addObject(new LevelButtons("playbutton.png"),700,300);
+ 
     }
 }

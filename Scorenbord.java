@@ -15,7 +15,7 @@ public class Scorenbord extends Actor
     private int xPosZilverenMunt =970;
     private int xPosGemBlue = 970;
     private boolean xPosGoudenSleutel =false;
-    public int GameOver=0;
+  
    
     ArrayList<Leven> hartje =new ArrayList<Leven>();
     /**
@@ -79,7 +79,6 @@ public class Scorenbord extends Actor
         leven.setImage("hud_heartFull.png");
         getWorld().addObject(leven, 50+(i*60), 50);
         hartje.add(leven);
-        //doodGaan();
         }
     }
     public void doodGaan()

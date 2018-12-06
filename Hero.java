@@ -63,8 +63,6 @@ public class Hero extends Mover {
         for (Actor enemy : getIntersectingObjects(Enemy.class)) {
             if (enemy != null) {
                 setLocation(200,1400);
-                //getWorld().removeObject(this);
-                //scb.updateScorenHeart();
                 scb.hartjeEraf();
                 break;
             
@@ -74,12 +72,19 @@ public class Hero extends Mover {
         for(Actor lavaTile: getIntersectingObjects(LavaTile.class)) {
                if (lavaTile != null){
                         this.setLocation(470, 1635);
-                        //setImage("liquidLavaTop_mid");
                         scb.hartjeEraf();
                         break;
                   }
          }
-    }      
+    } 
+    public void JumpTile()
+       {
+           for(Tile jumpTile: getIntersectingObjects(JumpTile.class)) {
+              velocityY=-25;
+              break;
+           }
+    }    
+    
     //om te kijken wat de cordinatie is
     public String inspectMove() {
         String inspectmove = "X:" + this.getX() + "Y:" + this.getY();
@@ -91,7 +96,7 @@ public class Hero extends Mover {
         if (isTouching(ZilverenMunt.class)) {
             removeTouching(ZilverenMunt.class);
             scb.updateScorenSilver();
-            ZilverenMunt++;
+            //ZilverenMunt++;
         }
         return ZilverenMunt;
     }
@@ -101,7 +106,7 @@ public class Hero extends Mover {
         if (isTouching(GoudenMunt.class)) {
             removeTouching(GoudenMunt.class);
             scb.updateScorenGold();
-            GoudenMunt += 20;
+           // GoudenMunt += 20;
         }
         return GoudenMunt;
     }
@@ -171,14 +176,6 @@ public class Hero extends Mover {
 
  
     }
-    public void JumpTile()
-       {
-      
-           for(Tile jumpTile: getIntersectingObjects(JumpTile.class)) {
-              velocityY=-25;
-              break;
-         }
-    }
     
     
     public void animatie() {
@@ -204,16 +201,6 @@ public class Hero extends Mover {
         }
     }
 
-    
-    public int getWidth() {
-        return getImage().getWidth();
-    }
-
-    public int getHeight() {
-        return getImage().getHeight();
-    }
-
-    
     public boolean keySpace() {
         boolean keySpace = Greenfoot.isKeyDown("space");
         return keySpace;
@@ -228,8 +215,14 @@ public class Hero extends Mover {
         boolean keyLeft = Greenfoot.isKeyDown("left");
         return keyLeft;
     }
-
    
     
+      public int getWidth() {
+        return getImage().getWidth();
+    }
+
+    public int getHeight() {
+        return getImage().getHeight();
+    }
     
 }

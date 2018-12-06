@@ -14,14 +14,8 @@ public class Enemy extends Mover {
     private int speed;
 
     public Enemy() {
-        //super();
-        
         setImage("fireball.png");
-        //getImage().mirrorHorizontally();
-        //walkRange = 140;
-        turn(15);
-        //firstAct = true;
-        //speed = 1;
+        turn(5);
     }
     public Enemy(String image)
     {
