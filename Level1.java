@@ -43,9 +43,7 @@ public class Level1 extends World {
         {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,72,73,74,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,65,65,150,150,150,150,150,65,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,81,82,83,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,8,9,0,1},
         {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,65,150,150,150,150,207,207,207,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,13,13,14,5,6},
         {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,7,1,6,-1,-1,-1,-1,-1,-1,-1,12,13,12,13,14,-1,-1,-1,-1,-1,-1,-1,-1,82,65,150,150,207,207,207,207,207,82,82,82,82,82,17,17,17,17,17,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82},
-                {82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,65,207,207,207,207,207,207,207,207,65,65,65,65,65,287,287,287,287,287,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65},
-
-
+        {82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,65,207,207,207,207,207,207,207,207,65,65,65,65,65,287,287,287,287,287,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65},
         };
 
         // Declareren en initialiseren van de TileEngine klasse om de map aan de world toe te voegen
@@ -57,11 +55,7 @@ public class Level1 extends World {
         // moet de klasse Mover extenden voor de camera om te werken
         Hero hero = new Hero();
         
-        
-        
-        
         addObject(new RandomObjecten("hud_keyYellow_disabled.png"),50,110);
-  
         
         // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
         camera.follow(hero);
@@ -72,17 +66,14 @@ public class Level1 extends World {
         addObject(hero, 200, 1400);
         addObject(new Enemy(), 1600, 1540);
         addObject(new Enemy("snailWalk1.png"),600,1625);
-          
-        addObject(new ZilverenMunt(),2805,935);
-        addObject(new ZilverenMunt(),1915,1075);
-        addObject(new ZilverenMunt(),1330,1285);
+      
         addObject(new GemBlue(),2500,1215);
-        addObject(new GoudenMunt(),2700,1565);
-       
         addObject(new YellowKey(),4872,1145);
 
-        //addObject(new ResetButton(),50,50);
-     
+        addObject(new Munten("coinGold.png",false),2805,935);
+        addObject(new Munten("coinGold.png",false),2700,1565);
+        addObject(new Munten("coinSilver.png",false),1915,1075);
+        addObject(new Munten("coinSilver.png",false),1330,1285);
       
     
      

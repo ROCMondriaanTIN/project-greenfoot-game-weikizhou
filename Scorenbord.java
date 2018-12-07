@@ -8,15 +8,10 @@ import java.util.ArrayList;
  */
 public class Scorenbord extends Actor
 {   
-    public  static int leven =2;
-    public static int score =0;
-    private int xPosLeven =20;
-    private int xPosGoudenMunt =970;
-    private int xPosZilverenMunt =970;
+    public int score =0;
     private int xPosGemBlue = 970;
     private boolean xPosGoudenSleutel =false;
-  
-   
+
     ArrayList<Leven> hartje =new ArrayList<Leven>();
     /**
      * Act - do whatever the Scorenbord wants to do. This method is called whenever
@@ -28,26 +23,14 @@ public class Scorenbord extends Actor
         update();
         latenZien();
         doodGaan();
-    }    
-    public void updateScorenSilver()
-    {
-        score+=1;
-        getWorld().addObject(new Zilveren(),xPosZilverenMunt,50);
-        xPosZilverenMunt-=20;
-        update();
-    }
-    public void updateScorenGold()
-    {
-        score+=20;
-        getWorld().addObject(new Gouden(),xPosGoudenMunt,110);
-        xPosZilverenMunt-=20;
-        update();
-    }
+    } 
+
     public void updateScorenGemBlue()
     {
-        getWorld().addObject(new Diamant(),xPosGemBlue,170);
-        xPosZilverenMunt-=20;
+        getWorld().addObject(new Diamant(),xPosGemBlue,160);
+        xPosGemBlue -=20;
     }
+    
     public void updateScorenGoldKey()
     {       
           xPosGoudenSleutel = true;
@@ -57,14 +40,14 @@ public class Scorenbord extends Actor
     {
         if(score==20)
         {
-            leven++;
+            Hero.leven++;
             latenZien();
             score=0;
         }
     }
     public void hartjeEraf()
     {
-        leven--;
+        Hero.leven--;
         latenZien();
         doodGaan();
     }
@@ -74,7 +57,7 @@ public class Scorenbord extends Actor
         }
         hartje.clear();
         
-        for(int i =0; i< leven;i++){
+        for(int i =0; i< Hero.leven;i++){
         Leven leven = new Leven();
         leven.setImage("hud_heartFull.png");
         getWorld().addObject(leven, 50+(i*60), 50);
@@ -83,7 +66,7 @@ public class Scorenbord extends Actor
     }
     public void doodGaan()
     {   
-             if(leven==0){
+             if(Hero.leven==0){
              Greenfoot.setWorld(new GameOverScherm());}
     }
 

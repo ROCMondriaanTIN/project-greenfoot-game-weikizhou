@@ -17,8 +17,9 @@ public class Hero extends Mover {
     public boolean YellowKey = false;
     private int GemBlue;
     
-    public static int Leven =2;
+    public static int leven;
     
+    //animatie
     public int direction = 2;
     public int animationTimer = 0;
     public int PicNum = 1;
@@ -27,6 +28,8 @@ public class Hero extends Mover {
 
     
     Scorenbord scb;
+    Munten m;
+   
     
     public Hero() {
         super();
@@ -40,17 +43,25 @@ public class Hero extends Mover {
     @Override
     public void act() {
         handleInput();
-        getGoudenMunt();
-        getZilverenMunt();
         getGemBlue();
         getYellowKey();
-        DeurOpen();
+        DeurOpen2();
+        DeurOpen3();
+        DeurOpen4();
         JumpTile();
         
         if(scb ==null)
         {
         scb = new Scorenbord();
         getWorld().addObject(scb, -10,-10);
+        }
+        
+       
+        
+        if(m ==null)
+        {
+        m = new Munten();
+        getWorld().addObject(m, -10,-10);
         }
 
         velocityX *= drag;
@@ -90,27 +101,7 @@ public class Hero extends Mover {
         String inspectmove = "X:" + this.getX() + "Y:" + this.getY();
         return inspectmove;
     }
-
-    //hier zorg je ervoor dat het object weggaat als je het aanraakt
-    public int getZilverenMunt() {
-        if (isTouching(ZilverenMunt.class)) {
-            removeTouching(ZilverenMunt.class);
-            scb.updateScorenSilver();
-            //ZilverenMunt++;
-        }
-        return ZilverenMunt;
-    }
-
-    //hier zorg je ervoor dat het object weggaat als je het aanraakt
-    public int getGoudenMunt() {
-        if (isTouching(GoudenMunt.class)) {
-            removeTouching(GoudenMunt.class);
-            scb.updateScorenGold();
-           // GoudenMunt += 20;
-        }
-        return GoudenMunt;
-    }
-
+    
     public int getGemBlue() {
         if (isTouching(GemBlue.class)) {
             removeTouching(GemBlue.class);
@@ -128,31 +119,60 @@ public class Hero extends Mover {
         return YellowKey;
     }
 
-    public void DeurOpen() {
+    public void DeurOpen2() {
         for (Actor deur : getIntersectingObjects(Deur.class)) {
             if (YellowKey == true) {
                 if (Deur.class != null) {
                     Greenfoot.setWorld(new Level2());
+                    m.Reset();
                     String actieveWereld = "Level2";
-                    return;
+                    //return;
+                }
+            }
+            break;
+        }
+    }
+    public void DeurOpen3() {
+        for (Actor deur : getIntersectingObjects(Deur.class)) {
+            if (YellowKey == true) {
+                if (Deur.class != null) {
+                    Greenfoot.setWorld(new Level3());
+                    m.Reset();
+                    String actieveWereld = "Level3";
+                    //return;
+                }
+            }
+            break;
+        }
+    }
+    public void DeurOpen4() {
+        for (Actor deur : getIntersectingObjects(Deur.class)) {
+            if (YellowKey == true) {
+                if (Deur.class != null) {
+                    Greenfoot.setWorld(new Level4());
+                    m.Reset();
+                    String actieveWereld = "Level4";
+                    //return;
                 }
             }
             break;
         }
     }
 
-    public boolean opGrond() {
-        Actor onder = getOneObjectAtOffset(0, getImage().getHeight() / 2, Tile.class);
-        Tile tile = (Tile) onder;
-        return tile != null && tile.isSolid == true;
+    public boolean onGround() {
+        Actor underLeft = getOneObjectAtOffset(-getImage().getWidth() / 2, getImage().getHeight() / 2, Tile.class);
+        Actor underRight = getOneObjectAtOffset(getImage().getWidth() / 2, getImage().getHeight() / 2, Tile.class);
+        Tile tile1 = (Tile) underLeft;
+        Tile tile2 = (Tile) underRight;
+        return (tile1 != null && tile1.isSolid) || (tile2 != null && tile2.isSolid);
     }
 
     public void handleInput() {
         animatieStanding();
         animatieJump();
-        if (keySpace() && opGrond() == true) {
+        if (keySpace() && onGround() == true) {
             velocityY = -14;
-        } else if (Greenfoot.isKeyDown("up") && opGrond() == true) {
+        } else if (Greenfoot.isKeyDown("up") && onGround() == true) {
             velocityY = -14;
         }
 

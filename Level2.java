@@ -50,35 +50,27 @@ public class Level2 extends World
         };
          
         TileEngine te = new TileEngine(this, 70, 70, map);
-        
         Camera camera = new Camera(te);
-        
         Hero hero = new Hero();
-        
-      
-        addObject(new RandomObjecten("hud_keyYellow_disabled.png"),50,110);
-        
         camera.follow(hero);
+         
+        addObject(camera, 470, 1635);
+        addObject(hero, 470, 1635);
+         
+        addObject(new Enemy(), 1600, 1540);
+        addObject(new Enemy("snailWalk1.png"),600,1625);
+        
+        addObject(new RandomObjecten("hud_keyYellow_disabled.png"),50,110);
         
         addObject(new Deur(), 4830, 655);
         
+        addObject(new Munten("coinGold.png",false),2805,935);
+        addObject(new Munten("coinSilver.png",false),1915,1075);
+        addObject(new Munten("coinSilver.png",false),1330,1285);
+        addObject(new Munten("coinGold.png",false),235,935);
+        addObject(new Munten("coinSilver.png",false),195,1075);
+        addObject(new Munten("coinSilver.png",false),430,1285);
         
-        
-        addObject(camera, 470, 1635);
-        addObject(hero, 470, 1635);
-        //addObject(new Enemy(), 1600, 1540);
-        //addObject(new Enemy("snailWalk1.png"),600,1625);
-        
-        //Colectables
-        /*addObject(new ZilverenMunt(),2805,935);
-        addObject(new ZilverenMunt(),1915,1075);
-        addObject(new ZilverenMunt(),1330,1285);
-        addObject(new GemBlue(),2500,1215);
-        addObject(new GoudenMunt(),2700,1565);
-        addObject(new YellowKey(),4872,1145);*/
-
-        //addObject(new ResetButton(),50,50);
-
         ce = new CollisionEngine(te, camera);
        
         ce.addCollidingMover(hero);

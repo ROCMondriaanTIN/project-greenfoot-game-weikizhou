@@ -13,6 +13,8 @@ public class BeginScherm extends World
      * Constructor for objects of class BeginScherm.
      * 
      */
+   
+    
     public BeginScherm()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -21,6 +23,11 @@ public class BeginScherm extends World
         
         addObject(new LevelButtons("controllsbutton.png"),700,600);
         addObject(new LevelButtons("playbutton.png"),700,300);
- 
+        
+        Hero.leven=2;
     }
+    public void act(){
+    }
+    
+
 }
