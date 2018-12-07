@@ -57,8 +57,8 @@ public class Level2 extends World
         addObject(camera, 470, 1635);
         addObject(hero, 470, 1635);
          
-        addObject(new Enemy(), 1600, 1540);
-        addObject(new Enemy("snailWalk1.png"),600,1625);
+    //    addObject(new Enemy(), 1600, 1540);
+    //    addObject(new Enemy(),600,1625);
         
         addObject(new RandomObjecten("hud_keyYellow_disabled.png"),50,110);
         

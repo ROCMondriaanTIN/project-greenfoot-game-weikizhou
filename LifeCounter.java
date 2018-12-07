@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Scorenbord extends Actor
+public class LifeCounter extends Actor
 {   
     public int score =0;
     private int xPosGemBlue = 970;

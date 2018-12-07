@@ -12,10 +12,14 @@ public class Enemy extends Mover {
     private int xMax;
     private boolean firstAct;
     private int speed;
-
+    
     public Enemy() {
         setImage("fireball.png");
-        turn(5);
+       // getImage().mirrorHorizontally();
+        //walkRange=140;
+        setRotation(359);
+      //  firstAct = true;
+        speed= 1;
     }
     public Enemy(String image)
     {
@@ -53,5 +57,7 @@ public class Enemy extends Mover {
             || getOneObjectAtOffset(19, -45, Hero.class) != null) {  
            getWorld().removeObject(this);  
         } 
+    
     }
+   
 }

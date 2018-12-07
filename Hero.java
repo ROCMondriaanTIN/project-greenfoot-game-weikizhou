@@ -26,8 +26,8 @@ public class Hero extends Mover {
     
     private Hero hero1;
 
-    
-    Scorenbord scb;
+    LifeCounter LC;
+    //Scorenbord scb;
     Munten m;
    
     
@@ -50,14 +50,14 @@ public class Hero extends Mover {
         DeurOpen4();
         JumpTile();
         
-        if(scb ==null)
+   
+        //Om LifeCounter te connecten met mijn hero
+          if(LC ==null)
         {
-        scb = new Scorenbord();
-        getWorld().addObject(scb, -10,-10);
+        LC = new LifeCounter();
+        getWorld().addObject(LC, -10,-10);
         }
-        
-       
-        
+        //M zorgt ervoor dat ik de locatie weer reset
         if(m ==null)
         {
         m = new Munten();
@@ -66,38 +66,42 @@ public class Hero extends Mover {
 
         velocityX *= drag;
         velocityY += acc;
-        if (velocityY > gravity) {
+        if (velocityY > gravity) 
+        {
             velocityY = gravity;
         }
-         applyVelocity();
+        applyVelocity();
 
         for (Actor enemy : getIntersectingObjects(Enemy.class)) {
-            if (enemy != null) {
-                setLocation(200,1400);
-                scb.hartjeEraf();
-                break;
+               if (enemy != null)
+               {
+                  setLocation(200,1400);
+                  LC.hartjeEraf();
+                  break;
             
-          }
+               }
         }     
     
         for(Actor lavaTile: getIntersectingObjects(LavaTile.class)) {
-               if (lavaTile != null){
-                        this.setLocation(470, 1635);
-                        scb.hartjeEraf();
-                        break;
-                  }
-         }
+               if (lavaTile != null)
+               {
+                    this.setLocation(470, 1635);
+                    LC.hartjeEraf();
+                    break;
+               }
+        }
     } 
     public void JumpTile()
-       {
-           for(Tile jumpTile: getIntersectingObjects(JumpTile.class)) {
-              velocityY=-25;
-              break;
-           }
+    {
+        for(Tile jumpTile: getIntersectingObjects(JumpTile.class)) {
+          velocityY=-25;
+          break;
+        }
     }    
     
     //om te kijken wat de cordinatie is
-    public String inspectMove() {
+    public String inspectMove()
+    {
         String inspectmove = "X:" + this.getX() + "Y:" + this.getY();
         return inspectmove;
     }
@@ -105,7 +109,7 @@ public class Hero extends Mover {
     public int getGemBlue() {
         if (isTouching(GemBlue.class)) {
             removeTouching(GemBlue.class);
-            scb.updateScorenGemBlue();
+            LC.updateScorenGemBlue();
         }
         return GemBlue;
     }
@@ -113,7 +117,7 @@ public class Hero extends Mover {
     public boolean getYellowKey() {
         if (isTouching(YellowKey.class)) {
             removeTouching(YellowKey.class);
-            scb.updateScorenGoldKey();
+            LC.updateScorenGoldKey();
             YellowKey = true;
         }
         return YellowKey;
@@ -126,7 +130,7 @@ public class Hero extends Mover {
                     Greenfoot.setWorld(new Level2());
                     m.Reset();
                     String actieveWereld = "Level2";
-                    //return;
+                  
                 }
             }
             break;
@@ -139,7 +143,7 @@ public class Hero extends Mover {
                     Greenfoot.setWorld(new Level3());
                     m.Reset();
                     String actieveWereld = "Level3";
-                    //return;
+                 
                 }
             }
             break;
@@ -152,7 +156,7 @@ public class Hero extends Mover {
                     Greenfoot.setWorld(new Level4());
                     m.Reset();
                     String actieveWereld = "Level4";
-                    //return;
+                  
                 }
             }
             break;
@@ -192,11 +196,7 @@ public class Hero extends Mover {
             }
             animationTimer++;
         }
-            
-
- 
     }
-    
     
     public void animatie() {
         if (PicNum == 1) {
@@ -225,12 +225,10 @@ public class Hero extends Mover {
         boolean keySpace = Greenfoot.isKeyDown("space");
         return keySpace;
     }
-
     public boolean keyRight() {
         boolean keyRight = Greenfoot.isKeyDown("right");
         return keyRight;
     }
-
     public boolean keyLeft() {
         boolean keyLeft = Greenfoot.isKeyDown("left");
         return keyLeft;

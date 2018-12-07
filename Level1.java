@@ -64,8 +64,8 @@ public class Level1 extends World {
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 200, 1400);
         addObject(hero, 200, 1400);
-        addObject(new Enemy(), 1600, 1540);
-        addObject(new Enemy("snailWalk1.png"),600,1625);
+        addObject(new Enemy("snailWalk1.png"), 1600, 1540);
+        addObject(new Enemy(),600,1625);
       
         addObject(new GemBlue(),2500,1215);
         addObject(new YellowKey(),4872,1145);
