@@ -13,11 +13,12 @@ public class Munten extends Mover {
     String name;
     boolean opgepakt = false;
     
-    public static int score=0;
+
     
     public static int xPosZilverenMunt = 950;
     public static int xPosGoudenMunt = 950;
-
+    
+    LifeCounter LC;
     public Munten(String image, boolean opgepakt) {
         setImage(image);
         this.opgepakt = opgepakt;
@@ -29,6 +30,13 @@ public class Munten extends Mover {
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() {
+        if(LC ==null)
+        {
+        LC = new LifeCounter();
+        getWorld().addObject(LC, -10,-10);
+        }
+        
+        
         if (!opgepakt) {
             applyVelocity();
         }
@@ -36,36 +44,28 @@ public class Munten extends Mover {
         if (isTouching(Hero.class)) {
             switch (name) {
                 case "coinSilver":
-                    score+=1;
+                
                     getWorld().addObject(new Munten("coinSilver.png", true), xPosZilverenMunt, 50);
                     getWorld().removeObject(this);
-                    xPosZilverenMunt -= 25;
+                    xPosZilverenMunt -= 25; 
+                    Hero.score+=1;
+                    LC.updateLeven();
                     break;
                 case "coinGold":
-                    score+=2;
+                   
                     getWorld().addObject(new Munten("coinGold.png", true), xPosGoudenMunt, 100);
                     getWorld().removeObject(this);
                     xPosGoudenMunt -= 25;
+                    Hero.score+=2;
+                    LC.updateLeven();
                     break;
             }
         }
         
     }
-  
-//    public void update()
-//    {
-//        if(score==20)
-//      {
-//          leven++;
-//          latenZien();
-//           score=0;
-//      }
-//   }
-    
-    
-    public void Reset(){
-        
-      
+   
+
+    public void ResetLocatie(){
      xPosZilverenMunt=950;
      xPosGoudenMunt=950; 
     }

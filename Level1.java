@@ -47,33 +47,40 @@ public class Level1 extends World {
         };
 
         // Declareren en initialiseren van de TileEngine klasse om de map aan de world toe te voegen
-        TileEngine te = new TileEngine(this, 70, 70, map);
         // Declarenre en initialiseren van de camera klasse met de TileEngine klasse 
         // zodat de camera weet welke tiles allemaal moeten meebewegen met de camera
-        Camera camera = new Camera(te);
         // Declareren en initialiseren van een main karakter van het spel mijne heet Hero. Deze klasse 
         // moet de klasse Mover extenden voor de camera om te werken
-        Hero hero = new Hero();
-        
-        addObject(new RandomObjecten("hud_keyYellow_disabled.png"),50,110);
-        
-        // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
-        camera.follow(hero);
-        //addObject(new Deur(), 4830, 655);
-        addObject(new Deur(), 2000, 1565);
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
+        // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
+        
+        TileEngine te = new TileEngine(this, 70, 70, map);
+        Camera camera = new Camera(te);
+        Hero hero = new Hero();
+        camera.follow(hero);
+        
         addObject(camera, 200, 1400);
         addObject(hero, 200, 1400);
-        addObject(new Enemy("snailWalk1.png"), 1600, 1540);
-        addObject(new Enemy(),600,1625);
+        addObject(new Enemy("snailWalk1.png"), 1550, 1595);
+        addObject(new Enemy("snailWalk1.png"), 3175, 965);
+        addObject(new Enemy(),4240,1420);
+        addObject(new Enemy(),4525,1325);
       
-        addObject(new GemBlue(),2500,1215);
-        addObject(new YellowKey(),4872,1145);
+        addObject(new GemBlue(),2485,1215);
+        
+        YellowKey yellowKey1 = new YellowKey();
+        addObject(yellowKey1,482,1545);
+        addObject(new RandomObjecten("hud_keyYellow_disabled.png"),50,110);
+        addObject(new Deur(), 4815, 645);
+        
 
-        addObject(new Munten("coinGold.png",false),2805,935);
-        addObject(new Munten("coinGold.png",false),2700,1565);
+   
+        addObject(new Munten("coinGold.png",false),3535,375);
+        addObject(new Munten("coinSilver.png",false),2780,935);
+        addObject(new Munten("coinSilver.png",false),2415,1355);
+        addObject(new Munten("coinSilver.png",false),1685,1145);
+        addObject(new Munten("coinSilver.png",false),1355,1635);
         addObject(new Munten("coinSilver.png",false),1915,1075);
-        addObject(new Munten("coinSilver.png",false),1330,1285);
       
     
      

@@ -20,7 +20,7 @@ public class LifeCounter extends Actor
     public void act() 
     {
         // Add your action code here.
-        update();
+        updateLeven();
         latenZien();
         doodGaan();
     } 
@@ -36,7 +36,7 @@ public class LifeCounter extends Actor
           xPosGoudenSleutel = true;
           getWorld().addObject(new GoudenSleutel(),50,110);
     }
-    public void update()
+    public void updateLeven()
     {
         if(score==20)
         {
