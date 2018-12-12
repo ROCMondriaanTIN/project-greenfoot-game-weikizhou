@@ -15,7 +15,7 @@ public class Level4 extends World {
     public Level4() {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1, false);
-        this.setBackground("Backgroundlv4.png");
+        this.setBackground("CandyBackground.png");
       
 
         int[][] map = {
@@ -83,21 +83,24 @@ public class Level4 extends World {
         addObject(camera, 375, 2685);
         addObject(hero, 375, 2685);
         
-        addObject(new Enemy(), 3470, 2965);
-        addObject(new Enemy(),600,1625);
+        addObject(new Enemy(), 1860, 2615);
+        addObject(new Enemy("snailWalk1.png"),5140,1595);
+        addObject(new Enemy("snailWalk1.png"),3440,2995);
+        addObject(new Enemy("snailWalk1.png"),3500,2995);
       
         
        YellowKey4 yellowKey4 = new YellowKey4(); 
-        addObject(yellowKey4,482,2645);
+        addObject(yellowKey4,805,1775);
         addObject(new RandomObjecten("hud_keyYellow_disabled.png"),50,110);
-        addObject(new Deur(), 400, 2665);
+        addObject(new Deur(), 6445, 2325);
  
      
-        addObject(new Munten("coinGold.png",false),2700,1565);
-        addObject(new Munten("coinSilver.png",false),1915,1075);
-        addObject(new Munten("coinSilver.png",false),1330,1285);
-        addObject(new Munten("coinSilver.png",false),1330,1285);
-        addObject(new Munten("coinSilver.png",false),1330,1285);
+        addObject(new Munten("coinGold.png",false),5915,623);
+        addObject(new Munten("coinSilver.png",false),11997,2475);
+        addObject(new Munten("coinSilver.png",false),4580,2755);
+        addObject(new Munten("coinSilver.png",false),5770,1065);
+        addObject(new Munten("coinSilver.png",false),3050,2475);
+       // addObject(new Munten("coinSilver.png",false),3050,2475);
                   
       
     
