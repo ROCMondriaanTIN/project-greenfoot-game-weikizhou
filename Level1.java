@@ -61,12 +61,13 @@ public class Level1 extends World {
         
         addObject(camera, 200, 1400);
         addObject(hero, 200, 1400);
+        
         addObject(new Enemy("snailWalk1.png"), 1550, 1595);
         addObject(new Enemy("snailWalk1.png"), 3175, 965);
         addObject(new Enemy(),4240,1420);
         addObject(new Enemy(),4525,1325);
       
-        addObject(new GemBlue(),2485,1215);
+        //addObject(new GemBlue(),2485,1215);
         
         YellowKey yellowKey1 = new YellowKey();
         addObject(yellowKey1,4800,1215);

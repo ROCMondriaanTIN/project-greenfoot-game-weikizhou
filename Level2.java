@@ -103,8 +103,6 @@ public class Level2 extends World
           addObject(yellowKey2,2860,2475); 
           addObject(new RandomObjecten("hud_keyYellow_disabled.png"),50,110);
           addObject(new Deur(), 3860, 1075);
-          
-          
 
           addObject(new Munten("coinGold.png",false),4800,3595);
           addObject(new Munten("coinSilver.png",false),1315,3385);

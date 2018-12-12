@@ -82,19 +82,23 @@ public class Level4 extends World {
 
         addObject(camera, 375, 2685);
         addObject(hero, 375, 2685);
-     //   addObject(new Enemy(), 1600, 1540);
-     //   addObject(new Enemy(),600,1625);
-        addObject(new GemBlue(),3670,2965);
+        
+        addObject(new Enemy(), 3470, 2965);
+        addObject(new Enemy(),600,1625);
+      
         
        YellowKey4 yellowKey4 = new YellowKey4(); 
         addObject(yellowKey4,482,2645);
         addObject(new RandomObjecten("hud_keyYellow_disabled.png"),50,110);
         addObject(new Deur(), 400, 2665);
  
-        addObject(new Munten("coinGold.png",false),2805,935);
+     
         addObject(new Munten("coinGold.png",false),2700,1565);
         addObject(new Munten("coinSilver.png",false),1915,1075);
         addObject(new Munten("coinSilver.png",false),1330,1285);
+        addObject(new Munten("coinSilver.png",false),1330,1285);
+        addObject(new Munten("coinSilver.png",false),1330,1285);
+                  
       
     
      

@@ -15,7 +15,7 @@ public class Level3 extends World {
     public Level3() {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1, false);
-        this.setBackground("WinterBackGround.png");
+        this.setBackground("SnowBackground.png");
       
 
         int[][] map = {
@@ -96,24 +96,24 @@ public class Level3 extends World {
         Hero hero = new Hero();
         camera.follow(hero);
 
-        addObject(camera, 400, 3665);
-        addObject(hero, 400, 3665);
-       addObject(new Enemy(), 5415,1145);
-     //   addObject(new Enemy(),600,1625);
+         addObject(camera, 400, 3665);
+         addObject(hero, 400, 3665);
+         addObject(new Enemy(), 5415,1145);
+         addObject(new Enemy("snailWalk1.ong"),4010,2715);
       
         
         
         YellowKey3 yellowKey3 = new YellowKey3();
-        addObject(yellowKey3,1602,3635);
-        addObject(new RandomObjecten("hud_keyYellow_disabled.png"),50,110);
-        addObject(new Deur(), 650, 1985);
+         addObject(yellowKey3,1602,3635);
+         addObject(new RandomObjecten("hud_keyYellow_disabled.png"),50,110);
+         addObject(new Deur(), 650, 1975);
          
-        addObject(new Munten("coinGold.png",false),2805,935);
-        addObject(new Munten("coinSilver.png",false),315,4575);
-        addObject(new Munten("coinSilver.png",false),3010,3245);
-        addObject(new Munten("coinSilver.png",false),4020,2685);
-        addObject(new Munten("coinSilver.png",false), 4600,2895);
-        addObject(new Munten("coinSilver.png",false),6060,2125);
+         addObject(new Munten("coinGold.png",false),2805,1290);
+         addObject(new Munten("coinSilver.png",false),315,4575);
+         addObject(new Munten("coinSilver.png",false),3010,3245);
+         addObject(new Munten("coinSilver.png",false),4020,2685);
+         addObject(new Munten("coinSilver.png",false), 4600,2895);
+         addObject(new Munten("coinSilver.png",false),6060,2125);
     
      
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.

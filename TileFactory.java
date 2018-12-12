@@ -356,7 +356,7 @@ public class TileFactory {
 		break;
 		case 95:
 		tile = new Tile("liquidWaterTop_mid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-		 tile.isSolid = true;
+		
 		break;
 		case 96:
 		tile = new Tile("lock_blue.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
@@ -1079,32 +1079,32 @@ public class TileFactory {
 		 tile.isSolid = true;
 		break;
 		case 281:
-		   tile = new Tile("iceWater.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-		 tile.isSolid = true;
+		   tile = new WaterTile("iceWater.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+		
 		break;
 		case 282:
-		   tile = new Tile("iceWaterAlt.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-		 tile.isSolid = true;
+		   tile = new WaterTile("iceWaterAlt.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+		
 		break;
 		case 283:
-		   tile = new Tile("iceWaterDeep.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-		 tile.isSolid = true;
+		   tile = new WaterTile("iceWaterDeep.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+		
 		break;
 		case 284:
-		   tile = new Tile("iceWaterDeepAlt.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-		 tile.isSolid = true;
+		   tile = new WaterTile("iceWaterDeepAlt.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+		 
 		break;
 		case 285:
-		   tile = new Tile("iceWaterDeepStars.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-		 tile.isSolid = true;
+		   tile = new WaterTile("iceWaterDeepStars.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+		 
 		break;
 		case 286:
-		   tile = new Tile("iceWaterDeepStarsAlt.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-		 tile.isSolid = true;
+		   tile = new WaterTile("iceWaterDeepStarsAlt.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+		
 		break;
 		case 287:
-		   tile = new Tile("iceWaterMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-		 tile.isSolid = true;
+		   tile = new WaterTile("iceWaterMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+		
 		break;
 		case 288:
 		   tile = new WaterTile("iceWaterMidAlt.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);

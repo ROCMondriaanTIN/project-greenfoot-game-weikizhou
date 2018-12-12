@@ -61,28 +61,10 @@ public class Hero extends Mover {
         DeurOpen3();
         DeurOpen4();
         DeurOpen5();
-      
-        
+
         JumpTile();
         
         //getLeven();
-        
- 
-        //Om LifeCounter te connecten met mijn hero
-        if(LC ==null)
-        {
-        LC = new LifeCounter();
-        getWorld().addObject(LC, -40,-40);
-        }
-        //M zorgt ervoor dat ik de locatie weer reset
-        
-        if(m ==null)
-        {
-        m = new Munten();
-        getWorld().addObject(m, -30,-30);
-        }
-        
-      
 
         velocityX *= drag;
         velocityY += acc;
@@ -91,7 +73,19 @@ public class Hero extends Mover {
             velocityY = gravity;
         }
         applyVelocity();
-
+        //Om LifeCounter te connecten met mijn hero
+        if(LC ==null)
+        {
+        LC = new LifeCounter();
+        getWorld().addObject(LC, -40,-40);
+        }
+        //M zorgt ervoor dat ik de locatie weer reset        
+        if(m ==null)
+        {
+        m = new Munten();
+        getWorld().addObject(m, -30,-30);
+        }
+        
         for (Actor enemy : getIntersectingObjects(Enemy.class)) {
                if (enemy != null)
                {
@@ -107,7 +101,6 @@ public class Hero extends Mover {
                {
                     this.setLocation(365, 4085);
                     LC.hartjeEraf();
-                    
                     break;
                }
         }
@@ -116,10 +109,11 @@ public class Hero extends Mover {
                {
                     this.setLocation(400, 3665);
                     LC.hartjeEraf();
-                    
                     break;
                }
         }
+        
+        
     } 
     public void JumpTile()
     {
@@ -141,8 +135,7 @@ public class Hero extends Mover {
         LC.updateLeven();
     }
     }*/
-    
-    
+
     public int getGemBlue() {
         if (isTouching(GemBlue.class)) {
             removeTouching(GemBlue.class);
