@@ -20,7 +20,7 @@ public class Hero extends Mover {
     public  boolean yellowKey3 = false;
     public  boolean yellowKey4 = false;
           
-    private int GemBlue;
+    public int GemBlue;
     
     public static int leven;
     public static int score=0;
@@ -61,6 +61,8 @@ public class Hero extends Mover {
         DeurOpen3();
         DeurOpen4();
         DeurOpen5();
+      
+        
         JumpTile();
         
         //getLeven();
@@ -103,7 +105,16 @@ public class Hero extends Mover {
         for(Actor lavaTile: getIntersectingObjects(LavaTile.class)) {
                if (lavaTile != null)
                {
-                    this.setLocation(470, 1635);
+                    this.setLocation(365, 4085);
+                    LC.hartjeEraf();
+                    
+                    break;
+               }
+        }
+         for(Actor waterTile: getIntersectingObjects(WaterTile.class)) {
+               if (waterTile != null)
+               {
+                    this.setLocation(400, 3665);
                     LC.hartjeEraf();
                     
                     break;
@@ -154,7 +165,6 @@ public class Hero extends Mover {
             yellowKey2 = true;
             removeTouching(YellowKey2.class); 
             LC.updateScorenGoldKey();
-            
         }
         return yellowKey2;
     }
@@ -219,20 +229,24 @@ public class Hero extends Mover {
             }
             break;
         }
-    }
+    } 
+   
     public void DeurOpen5() {
         for (Actor deur : getIntersectingObjects(Deur.class)) {
             if (yellowKey4 == true) {
+               
                 if (Deur.class != null) {
                     Greenfoot.setWorld(new VictoryScherm());
                     yellowKey4=false;
                     String actieveWereld = "VictoryScherm";
                   
                 }
+            
             }
             break;
         }
     }
+   
 
     public boolean onGround() {
         Actor underLeft = getOneObjectAtOffset(-getImage().getWidth() / 2, getImage().getHeight() / 2, Tile.class);
@@ -244,7 +258,6 @@ public class Hero extends Mover {
 
     public void handleInput() {
         if(isTouching(MovingPlatform.class))
-        
         {
          velocityY = -1;
         }

@@ -69,7 +69,7 @@ public class Level1 extends World {
         addObject(new GemBlue(),2485,1215);
         
         YellowKey yellowKey1 = new YellowKey();
-        addObject(yellowKey1,482,1545);
+        addObject(yellowKey1,4800,1215);
         addObject(new RandomObjecten("hud_keyYellow_disabled.png"),50,110);
         addObject(new Deur(), 4815, 645);
         
