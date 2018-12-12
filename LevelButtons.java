@@ -11,9 +11,8 @@ public class LevelButtons extends Actor
     String name;
     
     public LevelButtons(String image){
-    setImage(image);
-   // this.name = name;
-    this.name = image.replaceAll("", "");
+     setImage(image);
+     this.name = image.replaceAll("", "");
     }
     
     /**
@@ -39,13 +38,8 @@ public class LevelButtons extends Actor
             case"PlayAgain.png":
              Greenfoot.setWorld(new BeginScherm());
              break;
-            
-        
-        
         }
-        
-        
-        }
+     }
     }    
  
 }

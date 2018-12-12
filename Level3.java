@@ -16,7 +16,6 @@ public class Level3 extends World {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1, false);
         this.setBackground("SnowBackground.png");
-      
 
         int[][] map = {
 
@@ -90,7 +89,6 @@ public class Level3 extends World {
 
         };
 
-
         TileEngine te = new TileEngine(this, 70, 70, map);
         Camera camera = new Camera(te);
         Hero hero = new Hero();
@@ -101,8 +99,6 @@ public class Level3 extends World {
          addObject(new Enemy(), 5415,1145);
          addObject(new Enemy("snailWalk1.ong"),4010,2715);
       
-        
-        
         YellowKey3 yellowKey3 = new YellowKey3();
          addObject(yellowKey3,1602,3635);
          addObject(new RandomObjecten("hud_keyYellow_disabled.png"),50,110);
@@ -115,7 +111,6 @@ public class Level3 extends World {
          addObject(new Munten("coinSilver.png",false), 4600,2895);
          addObject(new Munten("coinSilver.png",false),6060,2125);
     
-     
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
         // De collision engine kijkt alleen naar de tiles die de variabele solid op true hebben staan.
         ce = new CollisionEngine(te, camera);

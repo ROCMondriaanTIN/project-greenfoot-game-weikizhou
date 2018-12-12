@@ -9,22 +9,21 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class Munten extends Mover {
-
     String name;
+    LifeCounter LC;
     boolean opgepakt = false;
-    
-
-    
     public static int xPosZilverenMunt = 950;
     public static int xPosGoudenMunt = 950;
-    
-    LifeCounter LC;
+
     public Munten(String image, boolean opgepakt) {
         setImage(image);
         this.opgepakt = opgepakt;
         this.name = image.replaceAll(".png", "");
     }
-    public Munten(){}
+    
+    public Munten(){
+    }
+    
     /**
      * Act - do whatever the Munten wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -64,7 +63,6 @@ public class Munten extends Mover {
         
     }
    
-
     public void ResetLocatie(){
      xPosZilverenMunt=950;
      xPosGoudenMunt=950; 

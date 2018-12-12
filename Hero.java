@@ -19,7 +19,9 @@ public class Hero extends Mover {
     public  boolean yellowKey2 = false;
     public  boolean yellowKey3 = false;
     public  boolean yellowKey4 = false;
-          
+    LifeCounter LC;
+    Munten m;
+         
     public int GemBlue;
     
     public static int leven;
@@ -31,11 +33,6 @@ public class Hero extends Mover {
     public int PicNum = 1;
     
     private Hero hero1;
-
-    LifeCounter LC;
-    //Scorenbord scb;
-    Munten m;
-   
 
     public Hero() {
         super();
@@ -51,7 +48,6 @@ public class Hero extends Mover {
         handleInput();
         getGemBlue();
         
-       
         getYellowKey1();
         getYellowKey2();
         getYellowKey3();
@@ -104,7 +100,7 @@ public class Hero extends Mover {
                     break;
                }
         }
-         for(Actor waterTile: getIntersectingObjects(WaterTile.class)) {
+        for(Actor waterTile: getIntersectingObjects(WaterTile.class)) {
                if (waterTile != null)
                {
                     this.setLocation(400, 3665);
@@ -153,7 +149,7 @@ public class Hero extends Mover {
         }
         return yellowKey1;
     }
-     public boolean getYellowKey2() {
+    public boolean getYellowKey2() {
         if (isTouching(YellowKey2.class)) {
             yellowKey2 = true;
             removeTouching(YellowKey2.class); 
@@ -161,7 +157,7 @@ public class Hero extends Mover {
         }
         return yellowKey2;
     }
-       public boolean getYellowKey3() {
+    public boolean getYellowKey3() {
         if (isTouching(YellowKey3.class)) {
             yellowKey3 = true;
             removeTouching(YellowKey3.class); 
@@ -170,7 +166,7 @@ public class Hero extends Mover {
         }
         return yellowKey3;
     }
-       public boolean getYellowKey4() {
+    public boolean getYellowKey4() {
         if (isTouching(YellowKey4.class)) {
             yellowKey4 = true;
             removeTouching(YellowKey4.class); 
@@ -223,7 +219,6 @@ public class Hero extends Mover {
             break;
         }
     } 
-   
     public void DeurOpen5() {
         for (Actor deur : getIntersectingObjects(Deur.class)) {
             if (yellowKey4 == true) {
@@ -240,7 +235,6 @@ public class Hero extends Mover {
         }
     }
    
-
     public boolean onGround() {
         Actor underLeft = getOneObjectAtOffset(-getImage().getWidth() / 2, getImage().getHeight() / 2, Tile.class);
         Actor underRight = getOneObjectAtOffset(getImage().getWidth() / 2, getImage().getHeight() / 2, Tile.class);
@@ -321,7 +315,6 @@ public class Hero extends Mover {
     public int getWidth() {
         return getImage().getWidth();
     }
-
     public int getHeight() {
         return getImage().getHeight();
     }

@@ -6,20 +6,15 @@ import greenfoot.*;
  * @author R. Springer
  */
 public class Enemy extends Mover {
-
     private int walkRange;
     private int xMin;
     private int xMax;
     private boolean firstAct;
     private int speed;
-    
     public Enemy() {
-        setImage("fireball.png");
-       // getImage().mirrorHorizontally();
-        //walkRange=140;
-        setRotation(359);
-      //  firstAct = true;
-        speed= 1;
+      setImage("fireball.png");
+      setRotation(359);
+      speed= 1;
     }
     public Enemy(String image)
     {

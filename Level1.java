@@ -17,7 +17,6 @@ public class Level1 extends World {
         super(1000, 800, 1, false);
         this.setBackground("BackGroundLandScape.png");
       
-
         int[][] map = {
         {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,102,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,102,-1,-1,-1,-1,-1,-1,-1,-1,102,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
         {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,104,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,104,-1,-1,-1,-1,-1,-1,-1,-1,104,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
@@ -73,9 +72,7 @@ public class Level1 extends World {
         addObject(yellowKey1,4800,1215);
         addObject(new RandomObjecten("hud_keyYellow_disabled.png"),50,110);
         addObject(new Deur(), 4815, 645);
-        
 
-   
         addObject(new Munten("coinGold.png",false),3535,375);
         addObject(new Munten("coinSilver.png",false),2780,935);
         addObject(new Munten("coinSilver.png",false),2415,1355);
@@ -83,8 +80,6 @@ public class Level1 extends World {
         addObject(new Munten("coinSilver.png",false),1355,1635);
         addObject(new Munten("coinSilver.png",false),1915,1075);
       
-    
-     
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
         // De collision engine kijkt alleen naar de tiles die de variabele solid op true hebben staan.
         ce = new CollisionEngine(te, camera);

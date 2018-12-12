@@ -66,8 +66,10 @@ public class LifeCounter extends Actor
     }
     public void doodGaan()
     {   
-             if(Hero.leven==0){
-             Greenfoot.setWorld(new GameOverScherm());}
+            if(Hero.leven==0)
+            {
+             Greenfoot.setWorld(new GameOverScherm());
+            }
     }
 
    

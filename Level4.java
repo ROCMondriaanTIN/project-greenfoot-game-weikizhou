@@ -17,7 +17,6 @@ public class Level4 extends World {
         super(1000, 800, 1, false);
         this.setBackground("CandyBackground.png");
       
-
         int[][] map = {
 
 		{-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
@@ -66,7 +65,6 @@ public class Level4 extends World {
 		{174,174,174,174,174,174,174,174,174,174,174,174,174,174,174,174,195,195,174,174,174,207,174,207,207,207,207,207,207,207,207,207,207,207,207,207,228,228,228,228,228,228,174,174,174,195,195,195,195,195,195,195,195,195,195,195,174,174,174,207,207,174,207,228,207,207,174,174,174,174,174,174,195,174,174,174,207,174,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207},
 
         };
-
        // Declareren en initialiseren van de TileEngine klasse om de map aan de world toe te voegen
        // Declarenre en initialiseren van de camera klasse met de TileEngine klasse 
        // zodat de camera weet welke tiles allemaal moeten meebewegen met de camera
@@ -88,23 +86,18 @@ public class Level4 extends World {
         addObject(new Enemy("snailWalk1.png"),3440,2995);
         addObject(new Enemy("snailWalk1.png"),3500,2995);
       
-        
        YellowKey4 yellowKey4 = new YellowKey4(); 
         addObject(yellowKey4,805,1775);
         addObject(new RandomObjecten("hud_keyYellow_disabled.png"),50,110);
         addObject(new Deur(), 6445, 2325);
- 
-     
+
         addObject(new Munten("coinGold.png",false),5915,623);
         addObject(new Munten("coinSilver.png",false),11997,2475);
         addObject(new Munten("coinSilver.png",false),4580,2755);
         addObject(new Munten("coinSilver.png",false),5770,1065);
         addObject(new Munten("coinSilver.png",false),3050,2475);
-       // addObject(new Munten("coinSilver.png",false),3050,2475);
+        addObject(new Munten("coinSilver.png",false),3050,2475);
                   
-      
-    
-     
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
         // De collision engine kijkt alleen naar de tiles die de variabele solid op true hebben staan.
         ce = new CollisionEngine(te, camera);

@@ -15,15 +15,12 @@ public class Player extends Hero
     protected int hero;
     public void act() 
     {
-        // Add your action code here.
-        
-        //hier zendt ik de players naar level1
         click();
     } 
     public String getInspect()
     {
-    String getInspect="X:"+this.getX()+"Y:"+this.getY();
-    return getInspect;
+      String getInspect="X:"+this.getX()+"Y:"+this.getY();
+      return getInspect;
     }
     public Player(int i){
         this.hero = i;
